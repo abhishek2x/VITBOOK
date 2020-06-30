@@ -157,7 +157,7 @@ ACCOUNT_ACTIVATION_DAYS = 3
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'vitbook.smtp.team@gmail.com'
-EMAIL_HOST_PASSWORD = 'Vitbook@123'
+EMAIL_HOST_PASSWORD = 'ErqmsQF8pF5KEFg'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

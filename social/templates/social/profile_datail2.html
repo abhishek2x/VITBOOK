@@ -185,12 +185,6 @@
                 <i class="fa fa-table text-truncate" aria-hidden="true"></i>
                 <b>POSTS</b>
 
-{#                {% if user == myprofile.user %}#}
-{#                    <a href="{% url 'postCreate' %}" style="margin-left: 25px;">#}
-{#                        <button class="btn btn-warning btn-sm">New Post</button>#}
-{#                    </a>#}
-{#                {% endif %}#}
-
             </div>
             <div class="row infinite-container" style="margin-top: 20px;">
 
@@ -206,25 +200,6 @@
                                 </div>
                             </div>
                         </div>
-
-{#                    {% else %}#}
-{##}
-{#                        <div class="col-md-4 col-xs-4 infinite-item ">#}
-{#                            <div class="container img subjecting ">#}
-{#                                <a>#}
-{#                                    <div class="container text-center subjecting">#}
-{#                                        <p class="text-muted text-break" style="font-family: initial;padding-top: 30%;">#}
-{#                                            {{ n1.subject }}#}
-{#                                        </p>#}
-{#                                    </div>#}
-{#                                </a>#}
-{#                                <div class="middle">#}
-{#                                    <a href='{% url 'postDetail' n1.id %}'>#}
-{#                                        <div class="text">View Details</div>#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
 
                     {% endif %}
                 {% endfor %}

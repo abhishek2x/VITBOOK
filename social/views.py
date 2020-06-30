@@ -100,7 +100,7 @@ def profiling(request, pk):
 
     totalPhotos = photos.count()
 
-    followersList = FollowUser.objects.filter(profile=request.user.myprofile)
+    followersList = FollowUser.objects.filter(profile__id=pk)
     followersList2 = []
     for e in followersList:
         followersList2.append(e.followed_by)
@@ -108,7 +108,7 @@ def profiling(request, pk):
     noOfFollowers = followersList.count()
 
 
-    followingList = FollowUser.objects.filter(followed_by=request.user.myprofile)
+    followingList = FollowUser.objects.filter(followed_by__id=pk)
     followingList2 = []
     for e in followingList:
         followingList2.append(e.profile)

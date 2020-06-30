@@ -20,7 +20,7 @@
                 <div class="container mb-4">
                     <a href="{% url 'profileDetail' request.user.id %}">
                         <img src="/images/{{ request.user.myprofile.pic }}" alt="Not Provided" width="30px" height="30px">
-                        <b>Hello, {{user.username}}!</b>
+                        <b class="text-break">Hello, {{user.username}}!</b>
                     </a>
                 </div>
                 <hr>

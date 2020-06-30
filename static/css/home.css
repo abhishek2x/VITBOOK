@@ -1,0 +1,125 @@
+body{
+    margin: 0 auto;
+}
+.section_discover__img > img {
+    height: 400px;
+    width: 800px;
+    padding: 0%;
+    margin: 0px;
+    /* border: black 1px solid; */
+}
+#one{
+    margin: 0px;
+    padding-bottom: 10px;
+}
+
+.btn-group-vertical > .btn.btn-outline-secondary{
+    display: flex;
+    margin-bottom: 20px;
+    padding-inline: 87px;
+}
+.btn.btn-outline-secondary > a{
+    color: rgb(0, 0, 0);
+}
+/* 
+.btn.btn-outline-secondary > a:hover{
+    color: rgb(100, 133, 199);
+} */
+
+#btnGroupDrop1{    
+    margin-bottom: 20px;
+}
+.col-md-4 > h2 > em{
+    color: rgb(0, 0, 0);
+}
+
+.navbar-brand > a{
+    color:rgb(0, 0, 0);   
+}
+#link{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: x-large;
+}
+p.cont, div.col-md-4 > h2 > em{
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif, monospace;
+}
+
+div > h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+.container.obj{
+    border: 1px solid ;
+    border-color: rgb(219, 219, 219) ;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+    /* border: solid 2px #000; */
+    margin-bottom: 30px !important;
+}
+figcaption p{
+    color: rgb(0, 0, 0);
+    font-family: cursive;
+    font-size: x-large;
+}
+#one > div > img{
+    border-radius: 50%;
+    padding: 0%;
+    margin: 0em;
+    /* Not Working yet */
+    background-image: url("images/p.png");
+    background-color: rgb(105, 189, 189);
+}
+#one > div {
+    padding: 0%;
+    margin: 0ex;
+}
+h3.text{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+}
+superscript{
+    margin: 0em;
+    padding: 0%;
+}
+
+div.container.other-{
+    margin: 30px;
+}
+.row.other > p{
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+@media(min-width: 365px){
+    .posticon{
+    font-size: 2em;
+    }
+  }
+
+.scr{
+    overflow: scroll;
+}
+
+p.text-break.text-left.message {
+    font-size: 14px;
+    font-style: normal;
+}
+
+div.container.new-post{
+    border: 1px solid rgb(219, 219, 219);
+    background-color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #0073b1 !important;
+}
+
+div.container.new-post > a:hover{
+    font-weight: 600;
+    color: #0073b1 !important;
+    text-decoration: underline;
+}

@@ -1,0 +1,71 @@
+.chat{
+    margin: 0px;
+    padding: 0%;
+    background-color:rgb(255, 255, 255) !important;
+    border: solid 1px rgb(219, 219, 219);
+}
+nav > h1{
+    padding: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+textarea{
+    resize: none;
+    width: 90%;
+    margin: 0px;
+    padding: 0%;
+    margin-top: 30px;
+    /* padding: 10px; */
+}
+form{
+    display: inline;
+}
+span, button, i{
+    padding: 0%;
+    margin: 0px;
+}
+#containers{
+    overflow: scroll;
+    height: 700px;
+}
+.navPlay{
+    background-color: white;
+    border: solid 1px rgb(219, 219, 219);
+}
+
+p.userAddress{
+    
+    border-radius: 3px;
+    color: #000000;
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+}
+
+div.container.s{
+    margin-top: 20px;
+    border: solid 1px ;
+}
+p.userName{
+    margin: 0px;
+    padding: 0px;
+    font-size: medium;
+    font-weight: normal;
+    font-weight: 600;
+}
+p.userDate{
+    margin: 0px;
+    padding: 0px;
+    font-size: smaller;
+    font-weight: lighter;
+}
+p.box{
+    background: #f5f2f2 none repeat scroll 0 0;
+    border-radius: 25px;
+    margin: 20px;
+}
+p.userAddress{
+    margin: 3px;
+    padding: 10px;
+    font-family: sans-serif !important;
+}

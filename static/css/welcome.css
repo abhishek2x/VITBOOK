@@ -1,0 +1,51 @@
+
+.text-center{
+    padding: 0%;
+    margin: 0;
+}
+
+.container.text-center.head{
+    z-index: 1;
+    position: absolute;
+    top: 25%;
+    left: 8%;
+    background: transparent !important;
+}
+.container.text-center.head  > h1{
+    color: white;
+    margin: 10px;
+    overflow-x: inherit;
+    background: transparent !important;
+}
+h1.vit{
+    font-family: 'Merriweather', serif;
+    font-size: 6.3rem;
+    opacity: 1;
+    background: transparent !important;
+}
+/* h1.soc{
+    font-size: 5rem;
+    font-weight: bolder;
+    opacity: 1;
+    font-style: initial;
+    background: transparent !important;
+} */
+h2#typed{
+    background: transparent !important;
+    color: white !important;
+}
+@media(max-width:800px){
+    img {
+        width: 100%;
+        height: 800px;
+    }
+    h1.vit{
+        font-size: 3rem;
+    }
+    h2.soc{
+        font-size: 1.5rem;
+    }
+    .head{
+        left: 0px;
+    }
+}

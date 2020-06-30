@@ -1,0 +1,244 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/intro.css' %}">
+
+<body>
+    <section class="section section_discover">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 align-self-start text-center">
+                    <div>
+
+{#                        <h3 class="text">Feed :-</h3>#}
+                        <div class="container new-post p-3 text-left"
+                        style="
+                            background: white;
+                            border: 1px solid rgb(219, 219, 219);
+                            font-weight: 600;
+                            font-size: 1.2rem;
+                            line-height: 1.5;
+                        "
+                        >
+
+                            <a class="text-muted " href="{% url 'postCreate' %}">
+                                <i class="fa fa-edit"></i>
+                                Start a post
+                            </a>
+{#                                <i class="fa fa-camera fa"></i>#}
+                        </div>
+
+{#                        <form class="form-inline"#}
+{#                            style="border-top-style: solid;margin-top: 2px;border-top-width: 0px;margin-bottom: 10px;">#}
+{#                            <input id="tags" class="form-control mr-3" placeholder="Search in post"#}
+{#                                   value="{{ request.GET.si }}"#}
+{#                                type="text" name="si" />#}
+{##}
+{#                            <button class="btn btn-light m-2" type="submit" value="Search"><i#}
+{#                                    class="fas fa-search"></i></button>#}
+{#                        </form>#}
+
+                        <hr>
+
+                        <div class="container">
+                            {% if request.GET.si %}
+                            <p class="search">Showing results for {{ request.GET.si }}</p>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    
+                    <div class="infinite-container">
+                    {% if mypost_list %}
+                    {% for n1 in mypost_list %}
+                    <div class="container obj infinite-item" id="{{n1.id}}">
+
+                        <nav class="navbar navbar-light" id="one">
+                            <div class="text-left">
+                                <img src="/images/{{n1.uploaded_by.pic}}" width="35" height="35"
+                                class="d-inline-block align-top">
+                                {% if n1.uploaded_by.user.is_superuser %}
+
+                                    <a href="{% url 'profileDetail' n1.uploaded_by.id %}" id="link">
+                                        {{n1.uploaded_by}}
+                                        <sup>
+                                            <img src="{% static 'images/verified.png' %}" alt="verified" width="20px" height="20px">
+                                        </sup>
+                                    </a>
+
+                                {% else%}
+                                <a href="{% url 'profileDetail' n1.uploaded_by.id %}" id="link">{{n1.uploaded_by}}</a>
+                                {% endif %}
+                            </div>
+                            <a class="text-muted">{{n1.cr_date | date:"F d, Y"}} </a>
+
+                        </nav>
+                        <div class="section_discover__img">
+
+                            {% if n1.pic %}
+                                <img src="/images/{{n1.pic}}" class="img-thumbnail" alt="Picture">
+                            {% else %}
+                                <div class="container ">
+                                    <p class="text-break text-left" style="font-size: 14px;font-style: normal;">
+                                        {{ n1.msg }}
+                                    </p>
+                                </div>
+                            {% endif %}
+
+                            <div class="text-center">
+                                <p class="text-break font-italic" style="font-size: 20px;font-style: normal;font-family: initial;">
+                                    {{n1.subject}}
+                                </p>
+                            </div>
+
+                            <hr>
+                        </div>
+
+                        <nav class="navbar navbar-light">
+
+                            {% if n1.liked %}
+                                <a class="btn btn-danger btn-sm" id="likebutton"
+                                   href='{% url 'unlike' n1.id page_obj.number %}'>
+                                    <span><i class="fas fa-thumbs-down fa-2x"></i></span>
+                                </a>
+                            {% else %}
+                                <a class="btn btn-success btn-sm" id="likebutton"
+                                   href='{% url 'like' n1.id page_obj.number %}'>
+                                    <span><i class="fas fa-thumbs-up fa-2x"></i></span>
+                                </a>
+                            {% endif %}
+
+                            <a class="btn btn-dark btn-sm" href='{% url 'postDetail' n1.id %}'><span><i class="fa fa-mars fa-2x" aria-hidden="true"></i>
+                            </span></a>
+
+                            {% if user.is_superuser %}
+                                <a class="btn btn-danger btn-sm" href='{% url 'postDelete' n1.id %}'>
+                                    <i class="fas fa-trash-alt fa-2x"></i>
+                                </a>
+                            {% elif request.user == n1.uploaded_by.user %}
+                                <a class="btn btn-danger btn-sm" href='{% url 'postDelete' n1.id %}'>
+                                    <i class="fas fa-trash-alt fa-2x"></i>
+                                </a>
+                            {% endif %}
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModalCenter{{n1.id}}">
+                                Likes {{n1.likedno}}
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter{{n1.id}}" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h6 class="modal-title" id="exampleModalCenterTitle"><b>Likes</b></h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="text-left">
+
+                                                {% for e in n1.likelist %}
+                                                <p id="link">
+                                                    {{ e.name }}
+                                                </p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </nav>
+                    </div>
+
+                    {% endfor %}
+                    </div>
+
+                    {% else %}
+
+                        <div class="container row other text-center">
+                            <h3 class="text-muted" style="font-family: initial;">Welcome to Vitbook!</h3>
+{#                            #}
+{#                            <div class="container col-md-6 col-sm-6">#}
+{#                                <div class="container other-">#}
+{#                                    <a href="{% url 'postList' %}"><button class="btn-light">Explore at Vitbook</button></a>#}
+{#                                </div>#}
+{#                                <div class="container other-">#}
+{#                                    <a href="{% url 'vithubList' %}"><button class="btn-light">Know about Vithub</button></a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="container col-md-6 col-sm-6">#}
+{#                                <div class="container other-">#}
+{#                                    <a href="{% url 'profileEdit' user.id %}"><button class="btn-light">Set up your Profile</button></a>#}
+{#                                </div>#}
+{#                                <div class="container other-">#}
+{#                                    <a href="{% url 'profileList' %}"><button class="btn-light">Make new connections</button></a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        #}
+
+                            <div class="container p-3 m-2">
+                                <p class="text-left" style="font-size: 15px;font-family: initial;">
+                                    Hi! {{ request.user }}, we are glad that you have joined Vitbook.
+                                    Before you start exploring Vitbook, here is a quick guide that will
+                                    help you set up your profile and make you confortable with the structure of Vitbook.
+                                </p>
+                                <ol class="list-group text-left p-3">
+                                    <li class="text-break">Set up your <a class="text-primary" href="{% url 'profileEdit' request.user.id %}">profile</a>.</li>
+                                    <li class="text-break">Get to know about <a class="text-primary" href="{% url 'vithubList' %}">Vithub</a>.</li>
+                                    <li class="text-break">Explore the <a class="text-primary" href="{% url 'postList' %}">pictures</a> section.</li>
+                                    <li class="text-break">Join the <a class="text-primary" href="{% url 'chat_ajax' %}">Forum</a></li>
+                                    <li class="text-break">Stay updated by checking the <a class="text-primary" href="{% url 'ub' %}">Announcements</a>.</li>
+                                    <li class="text-break">Create and vote in the Anonymous <a class="text-primary" href="{% url 'poll_home' %}">poll</a>.</li>
+                                    <li class="text-break">Check you <a class="text-primary" href="{% url 'attendance' %}">attendance</a> and <a class="text-primary" href="{% url 'grades' %}">Grades</a></li>
+                                    <li class="text-break">Discover new <a class="text-primary" href="{% url 'profileList' %}">people</a>.</li>
+                                    <li class="text-break">You are free to share and post anything you want including you work-events, any posters, casual photos, etc.</li>
+                                </ol>
+                                <hr>
+                                <div class="text-center">
+                                    <b>Connect X Explore X Learn</b>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    {% endif %}
+                </div>
+
+                <div class="col-md-4 align-self-start">
+
+                    <div class="Friends">
+
+                        <h3><em>Notifications</em> </h3>
+
+                        <div class="inn m-2 mt-4">
+                            <p class="cont">
+                                <a class="btn btn-md btn-warning mt-4 mb-2 p-2" href="{% url 'notification' %}">
+                                    Recent Announcements
+                                </a>
+                                <a class="btn btn-md btn-info mt-4 mb-2 p-2" href="{% url 'notification' %}">
+                                    Recent Following Activity
+                                </a>
+                                <a class="btn btn-md btn-success mt-4 mb-2 p-2" href="{% url 'notification' %}">
+                                    Recent Projects
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+{% endblock %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

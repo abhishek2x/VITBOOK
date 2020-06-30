@@ -1,0 +1,84 @@
+
+ input[type=text], select, textarea {
+    width: fit-content;
+    padding: 3px; 
+    border-radius: 3px; 
+    box-sizing: border-box;
+    margin-top: 3px; 
+    margin-bottom: 3px;
+    resize: vertical; 
+    background-color: rgb(252, 248, 248);
+  }
+  textarea, select, input{
+      width: 100% !important;
+  }
+  input[type=submit] {
+    background-color: #4267B2;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #4267B2;
+  }
+  
+  .container {
+    /* border-radius: 50px; */
+    padding: 20px;
+  }
+div.container.obj{
+  margin:0px;
+  padding: 20px;
+  /* padding-right: 60px; */
+  border: 1px solid ;
+  border-color: rgb(219, 219, 219) ;  
+  background-color: rgb(255, 255, 255);
+  }
+
+  div.box{
+    margin-top: 10px;
+    border: 1px solid ;
+    border-color: rgb(219, 219, 219) ;  
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+  }
+
+p.lmf1{
+    text-decoration: wavy;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: large;
+}
+p.lmf2{
+    font-family: cursive;
+    text-decoration: wavy;    
+    font-size: large;
+}
+p.cont, div.col-md-4 > h2 > em{
+    font-family: 'Times New Roman', Times, serif, monospace;
+}
+
+.container > h1{
+  /* padding: 20px; */
+  padding-top: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  /* font-size: xx-large; */
+}
+
+h3{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@media(min-width: 400px){
+  h1{
+    font-size: 60px;
+  }
+
+  h3{
+    font-size: 40px;
+  }
+}
+/* 
+div.container{
+  margin: 0px;
+} */

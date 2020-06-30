@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/contact2.css' %}">
+
+<div class="container">
+  <h1>Contact Form</h1>
+  <form action="upload" method="post">
+    {% csrf_token %}
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="by" placeholder="Your name..">
+
+    <label for="lname">Subject</label>
+    <input type="text" id="lname" name="subject" placeholder="Subject..">
+
+    <label for="country">Branch</label>
+    <input type="text" id="country" name="branch" placeholder="Branch..">
+
+    <label for="subject">Description</label>
+    <textarea id="subject" name="description" placeholder="Feel free to share anything.."
+      style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+{% endblock %}

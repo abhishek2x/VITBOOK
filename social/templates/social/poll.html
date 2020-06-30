@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/notification.css' %}">
+
+    <main role="main" class="container">
+      <div class="d-flex align-items-center p-3 my-3 rounded box-shadow" id="color_back">
+        <div class="">
+          <h5 class="mb-0 lh-100">Available Polls</h5>
+        </div>
+      </div>
+
+        <div class="mb-2">
+          <a class="btn btn-block btn-outline-info mb-0 lh-100" href="{% url 'poll_create' %}">Create a poll +</a>
+        </div>
+
+    <div class="container-fluid m-0 p-0">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col" colspan="2">Question</th>
+              <th scope="col">Vote</th>
+              <th scope="col">Results</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for poll in polls %}
+            <tr>
+              <th scope="row">{{ poll.id }}</th>
+              <td colspan="2">{{ poll.question }}</td>
+              <td><a class="btn btn-sm btn-warning" href="{% url 'poll_vote' poll.id %}">Vote</a></td>
+              <td><a class="btn btn-sm btn-success" href="{% url 'poll_results' poll.id %}">Results</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+    </div>
+
+    </main>
+
+{% endblock %}

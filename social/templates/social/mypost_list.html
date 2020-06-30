@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/mypost_list.css' %}">
+
+<body>
+    <section class="section section_discover">
+
+        <div class="container-fluid">
+
+            <form class="form-inline"
+                style="border-top-style: solid;margin-top: 2px;border-top-width: 0px;margin-bottom: 10px;">
+                <input class="form-control mr-3" placeholder="Search in post" value="{{ request.GET.si }}" type="text"
+                    name="si" />
+                <button class="btn btn-light m-2 ml-0" type="submit" value="Search"><i class="fas fa-search"></i></button>
+{#                <a href="{% url 'postCreate' %}" class="btn btn-light m-2">Add</a>#}
+
+            </form>
+
+            <div class="container">
+                {% if request.GET.si %}
+                <p class="text-monospace text-muted">Showing results for "{{ request.GET.si }}"</p>
+                {% endif %}
+            </div>
+
+            {% if request.GET.si %}
+            <h1>{{request.GET.si}}'s Photos</h1>
+            {% else %}
+            <h1 class="m-3">Explore</h1>
+            {% endif %}
+
+            <div class="row infinite-container">
+                {% for n1 in mypost_list %}
+                    {% if n1.pic %}
+                        <div class="col-md-4 col-xs-4 infinite-item">
+                            <div class="container img">
+                                <a><img class="image img-fluid" src="/images/{{n1.pic}}" alt="{{n1.msg}}"></a>
+                                <div class="middle">
+                                    <a href='{% url 'postDetail' n1.id %}'>
+                                        <div class="text">View Details</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+<hr>
+{% endblock %}

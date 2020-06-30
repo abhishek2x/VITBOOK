@@ -1,0 +1,120 @@
+<!-- =========================================
+                         SIDE SLIDE
+        ========================================= -->
+<header class="forbg">
+    {% if user.is_authenticated %}
+    <div id="content">
+        <nav class="navbars navbar-expand-lg">
+            <button type="button" id="sidebarCollapse" class="btn">
+                <i class="fas fa-align-left"></i>
+            </button>
+        </nav>
+    </div>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Options:</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <div class="container mb-4">
+                    <a href="{% url 'profileDetail' request.user.id %}">
+                        <img src="/images/{{ request.user.myprofile.pic }}" alt="Not Provided" width="30px" height="30px">
+                        <b>Hello, {{user.username}}!</b>
+                    </a>
+                </div>
+                <hr>
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'home' %}">Home<i
+                                class="fa fa-home"></i></a></button>
+                </li>
+
+{#                <li class="nav-item active">#}
+{#                    <button type="button" class="btn chk"><a href="{% url 'profileDetail' user.id %}">Profile<i#}
+{#                                class="fas fa-id-badge"></i></a></button>#}
+{#                </li>#}
+
+{#                <li class="nav-item active">#}
+{#                    <button type="button" class="btn chk"><a href="{% url 'connections' %}">My Connections<i#}
+{#                                class="fas fa-users"></i></a></button>#}
+{#                </li>#}
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'postList' %}">Explore<i
+                                class="fa fa-search"></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'profileList' %}">Search Vitians<i
+                                class="fas fa-search"></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'chat_ajax' %}">Forum<i
+                                class="fa fa-comments "></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'poll_home' %}">Poll<i
+                            class="fa fa-table" aria-hidden="true"></i></a></button>
+                </li>
+
+{#                <li class="nav-item active">#}
+{#                    <button type="button" class="btn chk"><a href="{% url 'postCreate' %}">Add#}
+{#                            New Post<i class="fas fa-user-edit"></i></a></button>#}
+{#                </li>#}
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'ub' %}">Announcements<i
+                                class="fa fa-poll-people"></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'vithubList' %}">VITHUB<i
+                            class="fa fa-code" aria-hidden="true"></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'attendance' %}">Attendance<i
+                            class="fa fa-table" aria-hidden="true"></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a href="{% url 'grades' %}">Grades<i
+                            class="fa fa-book" aria-hidden="true"></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a target="_blank"
+                            href="https://abhishek2x.github.io/techera/">TECHERA<i
+                                class="fa fa-newspaper"></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a target="_blank"
+                            href="https://moodle.vitbhopal.ac.in/">Moodles<i
+                            class="fa fa-film"></i></a></button>
+                </li>
+
+                <li class="nav-item active">
+                    <button type="button" class="btn chk"><a target="_blank"
+                            href="http://myerp.vitbhopal.ac.in:8080/vtop/initialProcess">Vtop<i
+                                class="fa fa-film"></i></a></button>
+                </li>
+
+{#                <li class="nav-item active">#}
+{#                    <button type="button" class="btn chk"><a href="/accounts/logout">Logout<i#}
+{#                                class="fas fa-sign-out-alt"></i></a></button>#}
+{#                </li>#}
+                {% if user.is_superuser %}
+                <hr>
+                    <li class="nav-item active">
+                        <button type="button" class="btn chk"><a href="/admin">Admin<i
+                                    class="fas fa-user-shield"></i></a></button>
+                    </li>
+                {% endif %}
+
+            </ul>
+        </nav>
+
+        {% endif %}

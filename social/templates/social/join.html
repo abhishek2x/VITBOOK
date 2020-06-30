@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/contact2.css' %}">
+
+<div class="container">
+  <h1>Be a part of Vitbook Development Team</h1>
+  <form action="upload" method="post">
+    {% csrf_token %}
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="yname" placeholder="Your name..">
+
+    <label for="lname">Branch</label>
+    <input type="text" id="lname" name="branch" placeholder="Branch..">
+
+    <label for="country">Skills</label>
+    <textarea type="text" id="country" name="skills" placeholder="Your Skills.." style="height:200px"></textarea>
+
+    <label for="subject">Suggestions</label>
+    <textarea id="subject" name="suggestions" placeholder="Any new feature you want(optional)"
+      style="height:100px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+{% endblock %}

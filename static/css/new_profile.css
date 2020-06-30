@@ -1,0 +1,18 @@
+
+p.hd-txt{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+}
+
+div.container.dtl > p{
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif, monospace;
+
+}
+
+/*div#subjecting {*/
+/*    width: 93%;*/
+/*    height: 292px;*/
+/*}*/
+

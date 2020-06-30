@@ -1,0 +1,33 @@
+
+<!-- =========================================
+                         FOOTER
+        ========================================= -->
+
+<div class="footer">
+        <ul class="footer-ul">
+            <li>
+                <a data-toggle="modal" data-target="#exampleModalsLongAbout">About</a>
+            </li>
+            <li>
+                <a data-toggle="modal" data-target="#exampleModalsLongSupport">Support</a>
+            </li>
+            <li>
+                <a data-toggle="modal" data-target="#exampleModalsLongSecurity">Privacy</a>
+            </li>
+            <li>
+                <a data-toggle="modal" data-target="#exampleModalsLongTerms">Terms</a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}">Contact</a>
+            </li>
+            {%if user.is_authenticated%}
+            <li>
+                <a data-toggle="modal" data-target="#exampleModalsLongLogout">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="/accounts/login">Login</a>
+            </li>
+            {% endif %}
+        </ul>
+</div>

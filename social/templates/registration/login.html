@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+{#{% include 'social/preloader.html' %}#}
+{##}
+{#{% include 'social/navbar.html' %}#}
+{##}
+{#<link rel="stylesheet" href="{% static 'css/base.css' %}">#}
+{% load crispy_forms_tags %}
+
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
+<!-- Custom stylesheet -->
+<link rel="stylesheet" href="{% static 'css/signin.css' %}">
+<br>
+
+<br>
+<div class="text-center container-fluid">
+  <form class="form-signin" enctype="multipart/form-data" method="post">
+	
+<h2 class="displayy">[̲̅V][̲̅i][̲̅t][̲̅b][̲̅o][̲̅o][̲̅k]</h2>
+<br>
+	{% csrf_token %}
+	{{form | crispy}}<br>
+
+	<button class="hide"><input type="hidden"><a class="btn btn-primary btn-md active" role="button" aria-pressed="true">Sign in</a></input></button>
+	<hr>
+	<div class="text-center">
+		<div class="text-left">
+			<p class="font-weight-light">Don’t have an account?</p>
+			<input type="hidden"><a href="/accounts/register/" class="btn btn-primary active" role="button" aria-pressed="true">Sign up</a></input>
+		</div>
+		<div class="text-right">
+			<p class="font-weight-light">Forgot your password?</p>
+			<input type="hidden"><a href="/accounts/password/reset/" class="btn btn-primary active" role="button" aria-pressed="true">Reset Password</a></input>
+	    </div>
+	</div>
+  </form>
+</div>
+
+
+    <script>
+
+        document.getElementsByName('username')[0].placeholder='Username';
+        document.getElementsByName('password')[0].placeholder='Password';
+
+    </script>
+{#{% include 'social/Bootstrap_modal.html' %}#}
+{##}
+{#{% include 'social/footer.html' %}#}
+
+{% endblock %}

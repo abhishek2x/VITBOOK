@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/vithub_detail.css' %}">
+
+<div class="col-md-8 align-self-start">
+
+	<div class="co">
+		<div class="text-left">
+			<div id="first">
+				<img src="/images/{{vithub.uploaded_by.pic}}" width="30" height="30" alt=""
+					class="d-inline-block align-top">
+				<a href="{% url 'profileDetail' vithub.uploaded_by.id %}" id="link">{{vithub.uploaded_by}}</a>
+			</div>
+			<div id="second">
+				<h5>Project Name : {{vithub.title}}</h5>
+				<p><la class="font-weight-normal">Language :</la> {{vithub.language}}</p>
+				<p><la class="font-weight-normal">Domain :</la> {{vithub.domain}}</p>
+				<p id="des"><la class="font-weight-normal">Description :</la>{{vithub.description}}</p>
+				<p><la class="font-weight-normal">Created Date :</la> {{vithub.cr_date}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="container code">
+		<h3>Source Code : </h3>
+		<div>
+			<pre>
+			<code class="text-left">
+				{{vithub.code}}
+			</code>
+		</pre>
+		</div>
+	</div>
+	<hr>
+
+	{% if request.user == vithub.uploaded_by.user %}
+	<a href="{% url 'vithubDelete' vithub.id %}" class="btn btn-danger">Delete</a>
+	{% elif user.is_superuser %}
+	<a href="{% url 'vithubDelete' vithub.id %}" class="btn btn-danger">Delete</a>
+	{% endif %}
+	<a href="{% url 'vithubList' %}" class="btn btn-dark">Back</a>
+
+</div>
+
+{% endblock %}

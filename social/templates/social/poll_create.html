@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/notification.css' %}">
+
+    <main role="main" class="container">
+      <div class="d-flex align-items-center p-3 my-3 rounded box-shadow" id="color_back">
+        <div class="lh-100">
+          <h5 class="mb-0 lh-100">Create A New Poll</h5>
+        </div>
+      </div>
+
+        <form method="POST">
+            {% csrf_token %}
+
+          <div class="row">
+            <div class="col-md-12"><label for="inputEmail4">Question</label>
+{#                <textarea class="form-control form-control-lg" rows="4" type="text" placeholder=".form-control-lg"></textarea>#}
+                {% render_field form.question class="form-control form-control-md" rows="4" placeholder="Enter your Question" %}
+            </div>
+          </div>
+
+            <hr class="mb-5 mt-5">
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Option-1</label>
+{#              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">#}
+              {% render_field form.option_one class="form-control" placeholder="Option-1" %}
+
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Option-2</label>
+{#              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">#}
+              {% render_field form.option_two class="form-control" placeholder="Option-2" %}
+
+            </div>
+
+          </div>
+
+            <div class="text-right">
+              <button type="submit" class="btn btn-warning mt-5 mb-2 mr-3">Submit</button>
+            </div>
+
+        </form>
+
+    </main>
+
+{% endblock %}

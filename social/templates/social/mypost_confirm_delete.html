@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<style>
+	.myhead2{
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: solid;
+	}
+</style>
+    {% if request.user == mypost.uploaded_by.user %}
+        <main class="p-5">
+        <div class="row">
+            <div class="col-sm-12">
+            <h2 class="myhead2">Are you sure you want you delete your post?</h2>
+                <hr>
+                <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                {{form | crispy}}
+                <input class="btn btn-danger my-3" type="submit" />
+                </form>
+
+            </div>
+        </div>
+        </main>
+    {% else %}
+        <div class="container p-5">
+            <h3 class="text-danger text-break font-weight-bold" style="font-family: initial;">
+                Sorry {{ request.user }}, you can't delete someone else's post!
+            </h3>
+        </div>
+    {% endif %}
+{% endblock %}

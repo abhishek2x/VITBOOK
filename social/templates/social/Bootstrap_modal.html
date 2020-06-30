@@ -1,0 +1,301 @@
+
+<!-- =========================================
+                         MODALS
+        ========================================= -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongSettings" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Settings</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <h5 class="m-3">
+                        <li><a data-toggle="modal" data-target="#exampleModalsLongAbout">About</a></li>
+                    </h5>
+                    <h5 class="m-3">
+                        <li><a data-toggle="modal" data-target="#exampleModalsLongSupport">Connect</a></li>
+                    </h5>
+                    <h5 class="m-3">
+                        <li><a data-toggle="modal" data-target="#exampleModalsLongSecurity">Security and
+                                Privacy</a></li>
+                    </h5>
+                    <h5 class="m-3">
+                        <li><a data-toggle="modal" data-target="#exampleModalsLongTerms">Terms</a></li>
+                    </h5>
+                    <h5 class="m-3">
+                        <li><a data-toggle="modal" data-target="#exampleModalsLongTeam">Join Vitbook
+                                Development team</a></li>
+                    </h5>
+                    <hr>
+                    <button class="btn btn-lg">
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </button>
+                    <button class="btn btn-lg">
+                        <li><a href="/accounts/password/reset/">Reset Password</a></li>
+                    </button>
+                    <hr>
+                    {% if user.is_authenticated %}
+                    <button class="btn btn-lg">
+                        <li><a href="../../accounts/logout">Logout</a></li>
+                    </button>
+                    {% else %}
+                    <button class="btn btn-lg">
+                        <li><a href="../../accounts/login">Login</a></li>
+                    </button>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongSupport" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Connect with Developer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="pb-5">Connect</h5>
+                <p class="pb-3">Welcome to Vitbook!</p>
+                Hi!, I am Abhishek Srivastava.
+                I have developed this platform with a motive of connecting Vitians
+                of different background and providing them a platform to discuss their ideas and thoughts.
+                <br>
+
+                Feel free to reach out to me for any queries.
+                <ul class="connect-ul">
+                    <li class="connect-li">
+                        <a target="_blank" href="https://www.instagram.com/theprogrammedenthusiast/">
+                            <img src="/static/svg/instagram.svg" alt="instagram" height="50px" width="50px">
+                        </a>
+                    </li>
+                    <li class="connect-li">
+                        <a target="_blank" href="https://github.com/abhishek2x">
+                            <img src="/static/svg/github.svg" alt="Github" height="50px" width="50px">
+                        </a>
+                    </li>
+                    <li class="connect-li">
+                        <a target="_blank" href="https://medium.com/@abhishek2x">
+                            <img src="/static/svg/medium.svg" alt="Medium" height="50px" width="50px">
+                        </a>                    </li>
+                    <li class="connect-li">
+                        <a target="_blank" href="https://www.linkedin.com/in/abhishek-srivastava-49482a190/">
+                            <img src="/static/svg/linkedin.svg" alt="linkedin" height="50px" width="50px">
+                        </a>
+                    </li>
+                    <li class="connect-li">
+                        <a target="_blank" href="https://portfolio.abhisheksrivastava.me/">
+                            <img src="/static/svg/logo.jpg" alt="portfolio" height="50px" width="50px">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongAbout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalsLongAbout">About</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="pb-5">About Vitbook</h5>
+                <p class="pb-3">Welcome to Vitbook!</p>
+                Vitbook is created for the students of Vellore Institute of Technology. Current only Vellore Institute
+                of Technology, Bhopal students are permitted to access Vitbook.
+                This platform is developed with a motive of connecting Vitians of different background and providing
+                them a platform to discuss their ideas and thoughts.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongSecurity" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongSecurity">Security and Privacy</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h5 class="pb-5">Vitbook Security Management</h5>
+                <p class="pb-3">Welcome to Vitbook!</p>
+                <p>Normally a website is vulnerable to these most common security issues :</p>
+                <ul>
+                    <li>XSS (cross-site scripting) protection — Vitbook template system by default escapes variables,
+                        unless they are explicitly marked as safe.</li>
+                    <li>CSRF (cross site request forgery) protection — easy to turn on globally, guarantees that forms
+                        (POST requests) are sent from your own site.</li>
+                    <li>SQL injection protection — Vitbook uses built-in ORM, thus there is no risk of SQL injection
+                        (raw queries are possible, but by no means something that a beginner would need to use).</li>
+                </ul>
+                <p>Additiional security features : </p>
+                <ul>
+                    <li>Clickjacking protection — Django can detect when the content is requested from unauthorized
+                        iframe </li>
+                    <li>Safe password hash — Django by default uses PBKDF2, another option is bcrypt. Both are resilient
+                        to usage of rainbow tables (thanks to salt), both have significant compute time to prevent easy
+                        bruteforce.</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongTerms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTerms">Terms</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="pb-5">Terms and conditions</h5>
+                <p class="pb-3">Welcome to Vitbook!</p>
+                <p>Vitbook builds technologies and services that enable students to connect with each other. </p>
+                <p>We don't charge you to use vitbook or any other product or services covered by these terms. By using our Product, you agree that we can show you add that we think will be relevent to you and
+                    your intrests. </p>
+                <p>We don't sell your personal data to advertisers, and we don't share information that directly
+                    identifies you with advertisers unless you give us specific permissions. </p>
+                <p>Vitbook will not be responsible, in case of any information leaks, data modification or individual
+                    exploitation. Vitbook is only providing you services and its up to the users how to use it.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTeam">Team</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="pb-5">Vitbook Development Team</h5>
+                <p class="pb-3">Welcome to Vitbook!</p>
+                <p>Although we have include various reliable features in Vitbook, still there is a lot more work which
+                    is left to be done. Apart from that, for smooth working of Vitbook, we need to develop a team. A
+                    team which will regulate the various activies to Vitbook, and at the same time helps in adding new
+                    features to Vitbook that will be beneficial for Vitians.</p>
+                <p>So, We the developers of Vitbook, give you an opportunity to be a part of Vitbook Development Team.
+                </p>
+                <p>To be a part of Vitbook Development team you can follow to following link. </p>
+                <a href="{% url 'developer' %}"><button class="btn btn-md btn-success">Join</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongLogout" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongLogout" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalsLongLogout">Logout</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>You need to log in back.</p>
+                <a href="/accounts/logout"><button class="btn btn-md btn-danger">Logout</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongFollowing" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalCenterTitle"><b>Following</b></h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    {% for f in following %}
+                        <div class="link">
+                            <a href="{% url 'profileDetail' f.id %}">
+                                <img src="/images/{{ f.pic }}" class="m-2" alt="Not provided" width="40px" height="40px">
+                                {{ f }}
+                            </a>
+                            <button class="btn btn-sm btn-danger"
+                                    style="float: right ; margin-top: 13px ;"
+                            >unfollow</button>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsLongFollowers" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalCenterTitle"><b>Followers</b></h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+
+                    {% for follower in followers %}
+                        <div id="link">
+                        <a href="{% url 'profileDetail' follower.id %}">
+                            <img src="/images/{{ follower.pic }}" class="m-2" alt="Not provided" width="40px" height="40px">
+                            {{ follower }}
+                        </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

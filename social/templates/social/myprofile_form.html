@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+
+
+{#<a href="profile/edit/int:pk" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>#}
+<style>
+	.myhead2{
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: solid;
+	}
+</style>
+
+{% if myprofile.user == request.user %}
+
+    <main class="pl-2">
+        <div class="offset-sm-3 container">
+        <h1 class="myhead2">Profile Update</h1>
+            <hr>
+
+            <form enctype="multipart/form-data" method="post">
+
+                {% csrf_token %}
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Name</label>
+    {#              <input type="text" class="form-control" placeholder="Name">#}
+                  {% render_field form.name class="form-control" placeholder="Name" %}
+
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Age</label>
+    {#              <input type="text" class="form-control" placeholder="Age">#}
+                  {% render_field form.age class="form-control" placeholder="Age" %}
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">City</label>
+    {#              <input type="email" class="form-control" placeholder="City">#}
+                  {% render_field form.city class="form-control" placeholder="City" %}
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Registration Number</label>
+    {#              <input type="text" class="form-control"placeholder="VIT Registration No.">#}
+                  {% render_field form.registration_no class="form-control" placeholder="VIT Registration No." %}
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Phone Number</label>
+    {#              <input type="text" class="form-control" placeholder="Phone Number">#}
+                  {% render_field form.phone_no class="form-control" placeholder="Phone Number" %}
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Tagline</label>
+    {#              <input type="text" class="form-control" placeholder="Hit me on Vitbook!">#}
+                  {% render_field form.tagline class="form-control" placeholder="Hit me on Vitbook!" %}
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputAddress">Description</label>
+    {#              <textarea type="text" rows="4" class="form-control" placeholder=Description"></textarea>#}
+                  {% render_field form.description rows="4" class="form-control" placeholder="Description" %}
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputState">Gender</label>
+    {#              <select id="inputState" class="form-control">#}
+    {#                <option selected>Choose...</option>#}
+    {#                <option>...</option>#}
+    {#              </select>#}
+                  {% render_field form.gender class="form-control" placeholder="Gender" %}
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputState">College</label>
+    {#              <select id="inputState" class="form-control">#}
+    {#                <option selected>Choose...</option>#}
+    {#                <option>...</option>#}
+    {#              </select>#}
+                  {% render_field form.college class="form-control" placeholder="College Branch" %}
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputState">Status</label>
+    {#              <select id="inputState" class="form-control">#}
+    {#                <option selected>Choose...</option>#}
+    {#                <option>...</option>#}
+    {#              </select>#}
+                  {% render_field form.status class="form-control" placeholder="Relationship Status" %}
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">LinkedIn: </label>
+                <div class="col-sm-10">
+    {#              <input type="text" class="form-control" placeholder="Profile URL">#}
+                  {% render_field form.linkedin_profile class="form-control" placeholder="Profile URL" %}
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Facebook: </label>
+                <div class="col-sm-10">
+    {#              <input type="text" class="form-control" placeholder="Profile URL">#}
+                  {% render_field form.facebook_profile class="form-control" placeholder="Profile URL" %}
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Github: </label>
+                <div class="col-sm-10">
+    {#              <input type="text" class="form-control" placeholder="Profile URL">#}
+                  {% render_field form.github_profile class="form-control" placeholder="Profile URL" %}
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Instagram: </label>
+                <div class="col-sm-10">
+    {#              <input type="text" class="form-control" placeholder="Profile URL">#}
+                  {% render_field form.insta_profile class="form-control" placeholder="Profile URL" %}
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Profolio: </label>
+                <div class="col-sm-10">
+    {#              <input type="text" class="form-control" placeholder="Profile URL">#}
+                  {% render_field form.portfolio class="form-control" placeholder="Portfolio URL" %}
+                </div>
+              </div>
+                <div class="form-group mt-3">
+                    <label class="mr-2">Profile Picture: </label>
+    {#                <input type="file" name="file">#}
+                    {{ form.pic }}
+                </div>
+
+              <input class="btn btn-dark my-3" type="submit" />
+
+            </form>
+
+    </div>
+    </main>
+
+{% else %}
+    <div class="container p-5">
+        <h3 class="text-danger text-break font-weight-bold" style="font-family: initial;">
+            Sorry {{ request.user }}, you don't have authority to edit someone else's profile
+        </h3>
+    </div>
+
+{% endif %}
+
+
+{% endblock %}
+

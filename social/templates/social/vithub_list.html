@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/vithub_list.css' %}">
+</head>
+
+<script>
+    $(function () {
+        $("#tags").autocomplete({
+            source: myprofile_list
+        });
+    });
+</script>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Vithub</h1>
+
+
+        <form class="form-inline"
+            style="border-top-style:solid;margin-top:2px;border-top-width:0px;margin-bottom:10px;">
+            <input id="tags" class="form-control mr-3" placeholder="Search in projects" value="{{ request.GET.si }}"
+                type="text" name="si" />
+
+            <button class="btn btn-light" type="submit" value="Search"><i class="fas fa-search"></i></button>
+
+            <a href="{% url 'vithubCreate' %}" class="btn btn-light m-2">Contribute</a>
+
+{#            <i class="fa fa-plus" aria-hidden="true"></i>#}
+        </form>
+
+
+        <div class="container">
+            {% if request.GET.si %}
+            <p class="text-monospace text-muted">Showing results for {{ request.GET.si }}</p>
+            {% endif %}
+        </div>
+
+
+        <section class="section section_discover">
+
+            <div class="container">
+                <div class="row infinite-container">
+
+                    {% if vithub_list %}
+                    {% for n1 in vithub_list %}
+                    <div class="col-md-8 align-self-start infinite-item">
+                        <div class="text-left">
+                            <div id="first">
+                                <img src="/images/{{n1.uploaded_by.pic}}" width="30" height="30" alt=""
+                                    class="d-inline-block align-top">
+                                <a href="{% url 'profileDetail' n1.uploaded_by.id %}" id="link">{{n1.uploaded_by}}</a>
+                                {% if n1.uploaded_by.user.is_superuser %}
+                                    <sup>
+                                        <img src="{% static 'images/verified.png' %}" alt="verified" width="20px" height="20px">
+                                    </sup>
+                                {% endif %}
+                            </div>
+                            <div id="second">
+                                <h5>Project Name : {{n1.title}}</h5>
+                                <p>
+                                    <la class="font-weight-normal">Language :</la>{{n1.language}}
+                                </p>
+                                <p>
+                                    <la class="font-weight-normal">Domain :</la> {{n1.domain}}
+                                </p>
+                                <p id="des">
+                                    <la class="font-weight-normal">Description :</la> {{n1.description}}
+                                </p>
+                                <p>
+                                    <la class="font-weight-normal">Created date :</la> {{n1.cr_date}}
+                                </p>
+                                <button>
+                                    <a class="btn btn-lg active text-right" role="button" aria-pressed="true"
+                                        href='{% url 'vithubDetail' n1.id %}'>View Code
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    {% endfor %}
+                    {% else %}
+                    <h1>
+                        No projects yet!
+                    </h1>
+                    {% endif %}
+                </div>
+
+            
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+<hr>
+{% endblock%}

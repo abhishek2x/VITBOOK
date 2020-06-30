@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/notification.css' %}">
+
+    <main role="main" class="container">
+      <div class="d-flex align-items-center p-3 my-3 rounded box-shadow" id="color_back">
+        <div class="lh-100">
+          <h5 class="mb-0 lh-100">Notifications</h5>
+        </div>
+      </div>
+
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Announcements</h6>
+
+        {% if notices %}
+            {% for n in notices %}
+
+            <div class="media text-muted pt-3">
+              <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+{#                  <a href="{% url 'profileDetail' n.to.myprofile.id %}">#}
+                      <strong class="d-block text-gray-dark">Attention @{{ n.to }}</strong>
+{#                  </a>#}
+                  There is a new announcement by <strong>@{{ n.by }}</strong>
+                  <br>
+                  {{ n.confession }}
+              </p>
+            </div>
+
+            {% endfor %}
+        {% else %}
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                No new Announcements
+          </p>
+        {% endif %}
+
+      </div>
+
+
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Projects</h6>
+
+        {% if code %}
+            {% for n in code %}
+
+            <div class="media text-muted pt-3">
+              <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark">@{{ n.title }}</strong>
+                  There is a new announcement by <strong>@{{ n.language }}</strong>
+                  <br>
+                  {{ n.description }}
+              </p>
+            </div>
+
+            {% endfor %}
+        {% else %}
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                No new Projects
+          </p>
+        {% endif %}
+
+      </div>
+
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Follow Activity</h6>
+        {% if follow %}
+            {% for n in follow %}
+
+            <div class="media text-muted pt-3">
+              <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    {#              <strong>@{{ n. }}</strong> started following <strong>@{{  }}</strong>#}
+                      <strong>@{{ n }}</strong> just got a new follower.
+              </p>
+            </div>
+
+            {% endfor %}
+        {% else %}
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                No new Activity
+          </p>
+        {% endif %}
+      </div>
+
+    </main>
+
+{% endblock %}

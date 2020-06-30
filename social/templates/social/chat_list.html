@@ -1,0 +1,108 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+<div class="col-md-10">
+  <nav class="navbar navPlay">
+    <h1>Vitbook Discussion Forum</h1>
+  </nav>
+
+  <div id="containers" class="container chat">
+
+    <div class="container" id="userTable">
+      {% if msgs %}
+      {% for user in msgs %}
+    
+      <!-- <div class=""> -->
+      <div class="container mt-4" id="user-{{user.id}}">
+
+        <p class="text-break userName userData" name="name">{{user.sender}}</p>
+        <p class="text-break userDate userData" name="date">{{user.cr_date}}</p>
+        <p class="text-break userAddress userData box" name="message">{{user.message}}</p>
+      
+      <!-- </div> -->
+      </div>
+      {% endfor %}
+      {% else %}
+
+      <h5>Start Using Vitbook ChatBox</h5>
+      {% endif %}
+    </div>
+
+  </div>
+  <form action="" id="controls" >
+    <textarea id="textbox" placeholder="Write your message..." name="message"></textarea>
+    <button class="btn btn-outline-success" id="send" type="submit">send</button>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<!-- <script src="/static/js/chat.js"></script> -->
+<script>
+
+  $("form#controls").submit(function () {
+    var textInput = $('textarea[name="message"]').val().trim();
+    //   var pain = $('textarea[name="pain"]').val().trim();
+    // alert(textInput);
+    console.log(textInput)
+    if (textInput) {
+
+      // Create Ajax Call
+      $.ajax({
+        url: '{% url "chat_ajax_create" %}',
+        data: {
+          'message': textInput,
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.user) {
+            // alert("data.user");
+            appendToUsrTable(data.user);
+            
+          }
+        }
+      });
+
+    }
+    else {
+      alert("All fields must have a valid value.");
+    }
+    $('form#controls').trigger("reset");
+    return false;
+  });
+
+
+  function appendToUsrTable(user) {
+    // console.log("here we go")
+    $("#userTable > div:last-child").append(`
+      <div id="user-${user.id}">
+          <p class="text-break userName userData" name="name">${user.sender}</p>
+          <p class="userDate" name="date">${user.cr_date}</p>
+          <p class="text-break userAddress userData box" name="address">${user.message}</p>
+      </div>
+  `);
+  $('#containers').scrollTop($("#containers").prop("scrollHeight"))
+  }
+
+
+  $(document).ready(function () {
+    $('#containers').scrollTop($("#containers").prop("scrollHeight"))
+  });
+
+
+  $('#textbox').keypress(function (e) { 
+        if(e.which == 13){
+            $('#send').click();
+            e.preventDefault();
+        }
+    });
+          
+  // $('#send').click(function (e) { 
+  //       e.preventDefault();
+  //       $('#container').scrollTop($("#container").prop("scrollHeight"));
+  //   });
+
+
+</script>
+{% endblock %}

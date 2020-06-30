@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/notification.css' %}">
+
+    <main role="main" class="container">
+      <div class="d-flex align-items-center p-3 my-3 rounded box-shadow" id="color_back">
+        <div class="lh-100">
+          <h5 class="mb-0 lh-100">Cast Your Vote</h5>
+        </div>
+      </div>
+
+        <form method="POST">
+            {% csrf_token %}
+
+          <div class="row">
+            <div class="col-md-12 mb-5"><label for="inputEmail4">Question</label>
+                <h5 class="text-monospace text-break ml-2">
+                    {{ poll.question }}
+                </h5>
+            </div>
+          </div>
+            <hr>
+            {% if has_voted %}
+
+                <h6 class="text-monospace text-break ml-2">
+                    You have already voted for this poll. <a class="text-primary" href="{% url 'poll_home' %}">Go back</a>
+                </h6>
+
+            {% else %}
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>
+                        <input type="radio" name="poll" value="option1" required>
+                        {{ poll.option_one }}
+                    </label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>
+                        <input type="radio" name="poll" value="option2" required>
+                        {{ poll.option_two }}
+                    </label>
+                </div>
+
+            {% endif %}
+          </div>
+
+
+            <div class="text-right">
+                  <button type="submit" class="btn btn-warning mt-5 mb-2 mr-3">Submit</button>
+            </div>
+
+        </form>
+
+    </main>
+
+{% endblock %}

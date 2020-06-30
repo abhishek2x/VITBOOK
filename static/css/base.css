@@ -1,0 +1,371 @@
+html, body{
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.forbg{
+margin-left: 7%;
+margin-right: 7%;
+}
+
+svg:not(:root).svg-inline--fa{
+  margin-left: 20px;
+}
+  .navbar-brand{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 50%;
+    font-weight: bolder;
+    font-size-adjust: inherit;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .navbar.mb-3{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid;
+    height: 67px;
+    border-bottom-color: rgb(219, 219, 219);
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+
+  }
+  ul.list-unstyled.components{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid ;
+    border-color: rgb(219, 219, 219) ;
+  }
+  /* .test{
+    background-color: rgb(27, 26, 26);
+    border: 1px solid ;
+    border-color: rgb(219, 219, 219) ;  
+    box-sizing: border-box;
+    padding-top: 20px;
+  } */
+
+  .navbar > a{
+    text-decoration-color:  rgb(0, 0, 0);
+  }
+
+  .navbar.navbar-expand-md.navbar-dark.bg-info.mb-3{
+    height: 65px;
+    background-color: black;
+  }
+
+  .nav-item.active > .btn.btn-outline-info{
+    border-left-color: black;
+    border-right: 2px;
+    padding: 3px 3px ;
+  }
+  .nav-item.active{
+    padding-right: 10px;
+  }
+
+  .nav-item.active > .btn.btn-outline-info > a{
+    color: rgb(0, 0, 0);
+  }
+  
+  .nav-item.active > .btn.btn-outline-info > a:hover{
+    text-decoration-style: solid;
+    font-weight: bolder;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .nav-item.active > .btn.btn-outline-info > a:active{
+    text-decoration-style: solid;
+    font-weight: bolder;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .container > a:hover{
+    text-decoration-style: solid;
+    font-weight: bolder;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .float-right > a{
+    /* color: #4267B2; */
+    font-weight: bold;
+    cursor: pointer;
+    color: #4267B2;
+    font-weight: bold;
+  }
+
+  .float-right > a:hover{
+    text-decoration-style: solid;
+    font-weight: bolder;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+  }
+
+
+.svg-inline--fa.fa-align-left{
+  height: 40px;
+}
+
+.btn.chk{
+  color: rgb(0, 0, 0);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.str > a > h4{
+  color: #000000;
+  font-family: 'Times New Roman', Times, serif;
+  text-emphasis: none;
+  font-style: oblique;
+  font-size: xx-large;
+  text-decoration-thickness: 10px;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------- */
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+}
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.5em;
+  color: rgb(0, 0, 0);
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+  /* background: #999; */
+  color: rgb(0, 0, 0);
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+  padding: 10px;
+  background: rgb(255, 255, 255);
+  border-color: rgb(219, 219, 219) !important;
+  border: solid 1px;
+  margin-bottom: 10px;  
+
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul p {
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+#sidebar ul li a:hover {
+  color: #4267B2;
+  background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: rgb(0, 0, 0);
+  background: #000000
+}
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #000000
+}
+
+
+.list-unstyled.components > p{
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: solid;
+}
+.nav-item.active > button > a{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.sidebar-header > h3{  
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  text-decoration: solid;
+}
+
+button#sidebarCollapse{
+  padding: 0%;
+  margin: 0px;
+  margin-left: 15px;
+}
+
+/* ------------------------------------------------------------------------------ */
+
+ /* The switch - the box around the slider */
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+/* Common functionalities */
+
+.btn.btn-light{
+  border: 1px solid ;
+  border-color: rgb(219, 219, 219) ;
+}
+
+
+div.inn{
+    
+  border: 1px solid ;
+  border-color: rgb(219, 219, 219) ;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 10px;
+}
+/* ................................................................................................... */
+
+
+@media(min-width: 365px){
+  .topicon{
+  font-size: 40px;
+  }
+}
+
+.footer{
+  margin-top: 25px;
+  margin-bottom: 10px;  
+  flex-wrap: nowrap;
+
+}
+
+ul.footer-ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  list-style-type: none;
+
+  font-weight: bold;
+  color: #00376b;
+  color: rgba(0,55,107,1);
+  text-decoration: none;
+}
+
+@media(max-width: 500px){
+  ul.footer-ul {
+    font-size: 10px;
+  }
+}
+
+ul.connect-ul{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+}

@@ -6,7 +6,7 @@
 {#	<section class="section section_discover">#}
 
 		<div class="container">
-			<div class="p-5 text-left">
+			<div class="text-left">
 
 			<h1 class="myhead2" style="font-style: inherit;font-family: initial;">Post Detail</h1>
 
@@ -14,7 +14,7 @@
                 {% if mypost.pic %}
                     <div class="col-md-12 container">
                         <img class="img-thumbnail" src="/images/{{mypost.pic}}" alt="Picture"
-                        style="height: auto;width: auto;"/>
+                        style="height: auto;width: auto;min-height: 300px"/>
                     </div>
                 {% endif %}
 				
@@ -27,8 +27,8 @@
 {#						<p><la class="font-weight-normal">Image location  :</la> {{mypost.pic}}</p>#}
 						<p><la class="font-weight-normal">Date :</la> {{mypost.cr_date | date:"F d, Y"}}</p>
 					</div>
-
 					
+
 					<div class="container text-right m-3 mr-0">
 						{% if user.is_superuser %}
 						<a href="{% url 'postDelete' mypost.id %}"><button

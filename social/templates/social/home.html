@@ -63,7 +63,7 @@
                                 class="d-inline-block align-top">
                                 {% if n1.uploaded_by.user.is_superuser %}
 
-                                    <a class="text-break href="{% url 'profileDetail' n1.uploaded_by.id %}" id="link" style="font-size: medium;min-height: 300px;">
+                                    <a class="text-break href="{% url 'profileDetail' n1.uploaded_by.id %}" id="link">
                                         {{n1.uploaded_by}}
                                         <sup>
                                             <img src="{% static 'images/verified.png' %}" alt="verified" width="20px" height="20px">

@@ -94,7 +94,7 @@
 | <a href="https://twitter.com/Abhishe51428266"><img src="https://openvisualfx.com/wp-content/uploads/2019/10/pnglot.com-twitter-bird-logo-png-139932.png" width="32px" height="32px"></a>  <a href="https://www.linkedin.com/in/abhishek-srivastava-49482a190/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a> |
 
 > **_Need help?_** 
-> **_Feel free to contact me @ [abhisehksrivastavabbn@gmail.com](mailto:abhisehksrivastavabbn@gmail.com?Subject=VITBOOK-Project)_**
+> **_Feel free to contact me @ [abhisheksrivastavabbn@gmail.com](mailto:abhisheksrivastavabbn@gmail.com?Subject=VITBOOK-Project)_**
 
 [![GitHub followers](https://img.shields.io/github/followers/abhishek2x.svg?label=Follow%20@abhishek2x&style=social)](https://github.com/abhishek2x/) [![Twitter Follow](https://img.shields.io/twitter/follow/Abhishe51428266?style=social)](https://twitter.com/Abhishe51428266)
 

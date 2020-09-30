@@ -1,11 +1,21 @@
-# VITBOOK
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://snip-share.herokuapp.com/)&nbsp;
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/PragatiVerma18/Snippet-Share)&nbsp;
+[![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://github.com/PragatiVerma18/Snippet-Share/)&nbsp;
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](snip-share.herokuapp.com)&nbsp;
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/PragatiVerma18/Snippet-Share/blob/master/README.md)&nbsp;
 
-## Introduction
+# VITBOOK
+> *More than just a social media platform*
+
+# Introduction
 
 ***VITBOOK is a __social media platform__ which is developed for the students of the Vellore Institute of Technology.***
 *This platform is developed with a motive of connecting Vitians of different background and providing them a platform to discuss their ideas and thoughts.*
 
-It comes with all the features of a social media platform like :
+**It comes with all the features of a social media platform like :**
  
  * Welcome Page
  * Login/Registration System
@@ -16,7 +26,7 @@ It comes with all the features of a social media platform like :
  * Home Page
  * Editing personal Profile, etc.
  
- Besides being just a regular social media platform, it comes with many other added features, like:
+ **Besides being just a regular social media platform, it comes with many other added features, like:**
  
  * Just like GitHub, developers can upload and showcase their code and work together on the platform.
  * A forum, to address important issues and problems.
@@ -67,3 +77,42 @@ It comes with all the features of a social media platform like :
 <div/>
 
 ***
+
+## Useful Resources
+
+- [Django Docs](https://docs.djangoproject.com/en/3.0/)
+- [Bootstrap Docs](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+- [Django Rest Framework Docs](https://www.django-rest-framework.org/)
+- [Git and GitHub](https://www.digitalocean.com/community/tutorials/how-to-use-git-a-reference-guide)
+
+## Project Admin
+[![Maintenance](https://img.shields.io/maintenance/yes/2020?color=green&logo=github)](https://github.com/abhishek2x)
+
+|                                                                                         <a href="https://github.com/abhishek2x"><img src="https://avatars0.githubusercontent.com/u/53976003?s=460&u=5f707e36730505c4a8a52cfa69ea33d5aeaa99ab&v=4" width=150px height=150px /></a>                                                                                         |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                        **[Abhishek Srivastava](https://www.linkedin.com/in/abhishek-srivastava-49482a190/)**                                                                                                                                        |
+| <a href="https://twitter.com/Abhishe51428266"><img src="https://openvisualfx.com/wp-content/uploads/2019/10/pnglot.com-twitter-bird-logo-png-139932.png" width="32px" height="32px"></a>  <a href="https://www.linkedin.com/in/abhishek-srivastava-49482a190/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a> |
+
+> **_Need help?_** 
+> **_Feel free to contact me @ [abhisehksrivastavabbn@gmail.com](mailto:abhisehksrivastavabbn@gmail.com?Subject=VITBOOK-Project)_**
+
+[![GitHub followers](https://img.shields.io/github/followers/abhishek2x.svg?label=Follow%20@abhishek2x&style=social)](https://github.com/abhishek2x/) [![Twitter Follow](https://img.shields.io/twitter/follow/Abhishe51428266?style=social)](https://twitter.com/Abhishe51428266)
+
+## Like This?? Star ⭐ this Repo.
+
+[![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://github.com/abhishek2x/VITBOOK)
+[![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](https://github.com/abhishek2x/VITBOOK)
+[![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](https://github.com/abhishek2x/VITBOOK)
+[![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](https://github.com/abhishek2x/VITBOOK)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://github.com/abhishek2x/VITBOOK)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://github.com/abhishek2x/VITBOOK)
+
+> Made By Abhishek Srivastava with ❤️
+
+> Abhishek Srivastava &copy; 2020
+<br><br>
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/abhishek2x/)
+[![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://github.com/abhishek2x/)
+
+***
+

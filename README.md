@@ -36,7 +36,7 @@
 
 ***
 
-## Technolog Stack
+## Technology Stack
 
 * Frontend
   * HTML
@@ -62,7 +62,7 @@
 <img height="64px" width="auto" src="https://miro.medium.com/max/3600/1*6ahbWjp_g9hqhaTDSJOL1Q.png">
 <img height="64px" width="auto" src="https://www.drupal.org/files/project-images/bootstrap-stack.png">
 <img height="64px" width="auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png">
-<img height="64px" width="auto" src="https://twilio-cms-prod.s3.amazonaws.com/images/django-dark.width-808.png">
+<img height="64px" width="auto" src=m"https://twilio-cms-prod.s3.amazonaws.com/images/django-dark.width-808.png">
 
 <div/>
 
@@ -75,7 +75,52 @@
 <img height="84px" width="auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNOsJTvwGyAy0ZuyLw8k0XkBx5GYQo8fLUkiat2Mpd00pq9tI&s">
 
 <div/>
+***
 
+## Quick Start 
+
+- Fork and Clone the repo using
+```
+git clone https://github.com/DSC-VIT-BHOPAL/VITBOOK.git
+cd VITBOOK/
+```
+- Install dependencies using
+```
+pip install -r requirements.txt
+```
+- Add you email and password in Vitbook/setting.py file(line no: 159
+```
+EMAIL_HOST_USER = '<your_gmail_id>'
+EMAIL_HOST_PASSWORD = '<your_password>'
+```
+- Make migrations using
+```
+python manage.py makemigrations
+```
+- Migrate Database
+```
+python manage.py migrate
+```
+- Create a superuser
+```
+python manage.py createsuperuser
+```
+- Run server using
+```
+python manage.py runserver
+```
+
+***
+
+## See a Live Working Example
+
+**Link :** <a href="https://vitbook.herokuapp.com/">Vitbook</a>
+
+> Login Credentials: 
+
+ * **Username:** TheProgrammedEnthusiast
+ * **Password:** admin@123
+ 
 ***
 
 ## Useful Resources

@@ -337,8 +337,10 @@ div.inn{
 }
 
 .footer{
-  margin-top: 25px;
-  margin-bottom: 10px;  
+  padding-top: 15px;
+  padding-bottom: 15px; 
+  position: fixed;
+  bottom: 0;
   flex-wrap: nowrap;
 
 }
@@ -353,6 +355,9 @@ ul.footer-ul {
   color: #00376b;
   color: rgba(0,55,107,1);
   text-decoration: none;
+}
+ul.footer-ul li {
+  cursor: pointer !important;
 }
 
 @media(max-width: 500px){

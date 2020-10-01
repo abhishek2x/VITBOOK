@@ -2,7 +2,16 @@ html, body{
   overflow-x: hidden;
   width: 100%;
 }
+body {
+  position: relative;
+  height: 100vh;
 
+}
+body::after {
+  content: '';
+  display: block;
+  height: 30px;
+}
 .forbg{
 margin-left: 7%;
 margin-right: 7%;
@@ -340,7 +349,11 @@ div.inn{
   margin-top: 25px;
   margin-bottom: 10px;  
   flex-wrap: nowrap;
-
+  clear: both;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
 }
 
 ul.footer-ul {
@@ -353,6 +366,9 @@ ul.footer-ul {
   color: #00376b;
   color: rgba(0,55,107,1);
   text-decoration: none;
+}
+ul.footer-ul li {
+  cursor: pointer;
 }
 
 @media(max-width: 500px){

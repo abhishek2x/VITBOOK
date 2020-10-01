@@ -2,17 +2,17 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/PragatiVerma18/Snippet-Share)&nbsp;
-[![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://github.com/PragatiVerma18/Snippet-Share/)&nbsp;
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/DSC-VIT-BHOPAL/VITBOOK)&nbsp;
+[![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://github.com/DSC-VIT-BHOPAL/VITBOOK/)&nbsp;
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](snip-share.herokuapp.com)&nbsp;
-[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/PragatiVerma18/Snippet-Share/blob/master/README.md)&nbsp;
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/DSC-VIT-BHOPAL/VITBOOK/blob/master/README.md)&nbsp;
 
 # VITBOOK
 > *More than just a social media platform*
 
 # Introduction
 
-***VITBOOK is a __social media platform__ which is developed for the students of the Vellore Institute of Technology.***
+***VITBOOK is a __social media platform__ which is developed for the students of the Vellore Institute of Technology, Bhopal.***
 *This platform is developed with a motive of connecting Vitians of different background and providing them a platform to discuss their ideas and thoughts.*
 
 **It comes with all the features of a social media platform like :**

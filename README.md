@@ -40,7 +40,7 @@
  Official VITBOOK Logo
 </h1>
 <p align="center"> 
-  <img src="static/images/logooo.png" />
+  <img height="340px" width="auto" src="static/images/logooo.png" />
 </p>
 
 ***

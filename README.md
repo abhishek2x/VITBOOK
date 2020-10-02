@@ -36,6 +36,15 @@
 
 ***
 
+<h1 align="center"> 
+ Official VITBOOK Logo
+</h1>
+<p align="center"> 
+  <img height="340px" width="auto" src="static/images/logooo.png" />
+</p>
+
+***
+
 ## Technology Stack
 
 * Frontend

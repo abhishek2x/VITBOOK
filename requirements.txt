@@ -7,7 +7,7 @@ django-registration-redux==2.8
 django-widget-tweaks==1.4.8
 gunicorn==20.0.4
 idna==2.9
-Pillow==7.1.2
+Pillow==8.3.2
 python-memcached==1.59
 pytz==2020.1
 requests==2.24.0

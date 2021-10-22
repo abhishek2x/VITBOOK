@@ -114,7 +114,6 @@ def profiling(request, pk):
         followingList2.append(e.profile)
 
     noOfFollowing = followingList.count()
-
     context = {'myprofile': profileData, 'photos': photos, 'totalPhotos': totalPhotos,
                'following': followingList2, 'followers': followersList2 ,
                'noOfFollowing': noOfFollowing, 'noOfFollowers': noOfFollowers}
@@ -325,7 +324,6 @@ class MyProfileUpdateView(UpdateView):
 class MyProfileListView(ListView):
     model = MyProfile
     paginate_by = 8
-
     def get_queryset(self):
         si = self.request.GET.get("si")
 
@@ -346,7 +344,6 @@ class MyProfileListView(ListView):
             p1.following = followingList.count()
 
         return profList
-
 
 # ---------------------------------------------------------------------------------------------------------------------
                                              # MyPost

@@ -1,0 +1,33 @@
+
+.col-sm-6 > p > strong{
+    text-decoration: solid;
+}
+
+div.box1{
+    padding: 0px;
+    margin: 10px;
+}
+
+div.box2{
+    margin:10px;
+    padding: 5px;
+    border: 1px solid ;
+    border-color: rgb(219, 219, 219) ;
+    background-color: rgb(255, 255, 255);
+    border-width: 2px;
+}
+p, h1, h3{
+    font-family: 'Times New Roman', Times, serif;
+}
+div.container.text-center >  a{
+    background-color: rgb(100, 133, 199);
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 750px) {
+    img.img-fluid{
+        margin-bottom: 40px;
+    }
+}

@@ -109,17 +109,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 LOGIN_REDIRECT_URL = "/"
-
 STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
+
 STATIC_URL = '/static/'
-
 MEDIA_URL = '/images/'
-
-if DEBUG == True:
-    MEDIA_ROOT = '/static/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')

@@ -23,7 +23,7 @@ from django.contrib import messages
 from django.views.generic import View
 from django.http import JsonResponse
 
-from django.core.mail import send_mail
+# from django.core.mail import send_mail
 
                                             # Create your views here.
 
@@ -120,43 +120,6 @@ def profiling(request, pk):
 
     return render(request, 'social/profile_datail2.html', context)
 
-
-# ----------------------------------------------------------------------------------------------------------------------
-                                 # Friends
-# -----------------------------------------------------------------------------------------------------------------------
-
-#
-# @method_decorator(login_required, name="dispatch")
-# class FriendsView(TemplateView):
-#     template_name = "social/friends.html"
-#     paginate_by = 6
-#     def get_context_data(self, **kwargs):
-#         context = TemplateView.get_context_data(self, **kwargs)
-#         followedList = FollowUser.objects.filter(followed_by = self.request.user.myprofile) # All user who we follow.
-#
-#         si = self.request.GET.get("si")
-#         if si == None:
-#             si = ""
-#         followedList = followedList.filter(Q(profile__name__icontains = si))
-#
-#         followedList2 = [] # Profile of all user(people) who we follow.
-#         for e in followedList:
-#             followedList2.append(e.profile)
-#
-#         for p1 in followedList2:
-#             p1.follow = False
-#             ob = FollowUser.objects.filter(profile = p1,followed_by=self.request.user.myprofile)
-#             if ob:
-#                 p1.follow = True
-#             obList = FollowUser.objects.filter(profile = p1)
-#             # print(obList)
-#             p1.followno = obList.count()
-#
-#         context["myprofile_list"] = followedList2
-#         return context
-#
-
-
 # ----------------------------------------------------------------------------------------------------------------------
                                          # Others
 # -----------------------------------------------------------------------------------------------------------------------
@@ -213,13 +176,13 @@ def Ubupload(request):
 
             instance.save()
 
-            send_mail(
-                'Your Accouncement is Uploaded Successfully',
-                'Your Accouncement is Uploaded Successfully at Accouncement Panel, You may check it if required',
-                'vitbook.smtp.team@gmail.com',
-                [request.user.email],
-                fail_silently=False
-            )
+            # send_mail(
+            #     'Your Accouncement is Uploaded Successfully',
+            #     'Your Accouncement is Uploaded Successfully at Accouncement Panel, You may check it if required',
+            #     'vitbook.smtp.team@gmail.com',
+            #     [request.user.email],
+            #     fail_silently=False
+            # )
 
             ALL_NOTICES.append(instance)
             messages.success(request, 'Your Announcement has been successfully Uploaded!')
@@ -251,13 +214,13 @@ def ContactViewUpload(request):
                                          subject=subject, 
                                          description=description)
         instance.save()
-        send_mail(
-            'Your Form is Successfully Submitted',
-            'Your Form is Uploaded Successfully, We may check it soon.',
-            'vitbook.smtp.team@gmail.com',
-            [request.user.email],
-            fail_silently=False
-        )
+        # send_mail(
+        #     'Your Form is Successfully Submitted',
+        #     'Your Form is Uploaded Successfully, We may check it soon.',
+        #     'vitbook.smtp.team@gmail.com',
+        #     [request.user.email],
+        #     fail_silently=False
+        # )
         messages.success(request, 'Your form has been successfully submitted!')
         return redirect('contact')
 
@@ -285,13 +248,13 @@ def JoinViewUpload(request):
                                          branch=branch, 
                                          suggestion=suggestions)
         instance.save()
-        send_mail(
-            'Your Form is Successfully Submitted',
-            'Your Form is Uploaded Successfully, We may check it soon.',
-            'vitbook.smtp.team@gmail.com',
-            [request.user.email],
-            fail_silently=False
-        )
+        # send_mail(
+        #     'Your Form is Successfully Submitted',
+        #     'Your Form is Uploaded Successfully, We may check it soon.',
+        #     'vitbook.smtp.team@gmail.com',
+        #     [request.user.email],
+        #     fail_silently=False
+        # )
         messages.success(request, 'Your form has been successfully submitted!')
         return redirect('developer')
 
@@ -401,8 +364,6 @@ class MyPostDeleteView(DeleteView):
                                          # VITHUB
 # -----------------------------------------------------------------------------------------------------------------------
 
-# VITHUB
-
 
 @method_decorator(login_required, name="dispatch")
 class VithubListView(ListView):
@@ -414,8 +375,6 @@ class VithubListView(ListView):
         if si == None:
             si = ""
         return Vithub.objects.filter(Q(title__icontains = si) | Q(title__icontains = si)).order_by("-id")
-
-# To update your profile
 
 
 @method_decorator(login_required, name="dispatch")
@@ -552,13 +511,13 @@ def poll_create(request):
         form = CreatePollForm(request.POST)
         if form.is_valid():
             form.save()
-            send_mail(
-                'Your Poll is Successfully Created',
-                'Your Poll has been Created Successfully, You may check it by following the Link.',
-                'vitbook.smtp.team@gmail.com',
-                [request.user.email],
-                fail_silently=False
-            )
+            # send_mail(
+            #     'Your Poll is Successfully Created',
+            #     'Your Poll has been Created Successfully, You may check it by following the Link.',
+            #     'vitbook.smtp.team@gmail.com',
+            #     [request.user.email],
+            #     fail_silently=False
+            # )
             return redirect('poll_home')
     else:
         form = CreatePollForm()

@@ -47,9 +47,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Vitbook.urls'
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -66,8 +63,13 @@ TEMPLATES = [
     },
 ]
 
+ROOT_URLCONF = 'Vitbook.urls'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WSGI_APPLICATION = 'Vitbook.wsgi.application'
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+LOGIN_REDIRECT_URL = "/"
+
+
 # Database
 
 DATABASES = {
@@ -108,14 +110,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-LOGIN_REDIRECT_URL = "/"
-
-MEDIA_URL = '/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')
-
+STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+MEDIA_URL = '/images/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR + 'static/images')

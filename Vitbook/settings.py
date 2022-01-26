@@ -64,7 +64,7 @@ TEMPLATES = [
 ]
 
 ROOT_URLCONF = 'Vitbook.urls'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WSGI_APPLICATION = 'Vitbook.wsgi.application'
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 LOGIN_REDIRECT_URL = "/"

@@ -9,6 +9,7 @@ from django.core.validators import MinValueValidator, RegexValidator
 class MyProfile(models.Model):
     name = models.CharField(max_length=100)
     user = models.OneToOneField(to=User, on_delete=CASCADE)
+    email = models.EmailField(max_length=254, blank=False, null=False)
     age = models.IntegerField(default=18, validators=[MinValueValidator(18)])
     gender = models.CharField(max_length=20, default="female", choices=(("male", "male"), ("female", "female")
                                                                         , ("other", "other")))

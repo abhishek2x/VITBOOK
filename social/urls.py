@@ -29,9 +29,9 @@ urlpatterns = [
     # path('contact/upload', views.ContactViewUpload),
     path('', RedirectView.as_view(url="home/")),
 
-    path('post/create/', views.MyPostCreate.as_view(success_url="/social/post"), name='postCreate'),
+    path('post/create/', views.MyPostCreate.as_view(success_url="/post"), name='postCreate'),
     path('post/delete/<int:pk>',
-         views.MyPostDeleteView.as_view(success_url="/social/post"), name='postDelete'),
+         views.MyPostDeleteView.as_view(success_url="/post"), name='postDelete'),
 
     path('post/', views.MyPostListView.as_view(), name='postList'),
 
@@ -43,7 +43,7 @@ urlpatterns = [
     path('post/unlike/<int:pk>/<page>', views.unlike, name='unlike'),
 
     path('profile/edit/<int:pk>',
-         views.MyProfileUpdateView.as_view(success_url="/social/home"), name='profileEdit'),
+         views.MyProfileUpdateView.as_view(success_url="/home"), name='profileEdit'),
     path('profile/', views.MyProfileListView.as_view(), name='profileList'),
     path('profile/<int:pk>', views.profiling, name='profileDetail'),
     # path('myprofile/<int:pk>', views.MyProfileDetailView.as_view(),),
@@ -52,9 +52,9 @@ urlpatterns = [
     path('profile/follow/<int:pk>', views.follow, name='follow'),
     path('profile/unfollow/<int:pk>', views.unfollow, name='unfollow'),
 
-    path('vithub/create/', views.VithubCreate.as_view(success_url="/social/vithub"), name='vithubCreate'),
+    path('vithub/create/', views.VithubCreate.as_view(success_url="/vithub"), name='vithubCreate'),
     path('vithub/delete/<int:pk>',
-         views.VithubDeleteView.as_view(success_url="/social/vithub"), name='vithubDelete'),
+         views.VithubDeleteView.as_view(success_url="/vithub"), name='vithubDelete'),
     path('vithub/', views.VithubListView.as_view(), name='vithubList'),
     path('vithub/<int:pk>', views.VithubDetailView.as_view(), name='vithubDetail'),
 

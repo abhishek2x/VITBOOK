@@ -14,7 +14,7 @@ INSTALLED_APPS = [
 
     # My apps
     'social',
-    'registration',
+    'accounts',
 
     # Default apps
 
@@ -87,7 +87,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Vitbook.wsgi.application'
-
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 # Database
 
 DATABASES = {

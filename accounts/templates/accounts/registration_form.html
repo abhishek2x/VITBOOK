@@ -26,7 +26,7 @@
 <br>
 
 <br>
-<div class="container">
+<div class="text-center container-fluid">
 	<form class="form-signin" enctype="multipart/form-data" method="POST">
 		<h2 class="displayy text-center">[̲̅V][̲̅i][̲̅t][̲̅b][̲̅o][̲̅o][̲̅k]</h2>
 		<br>
@@ -106,14 +106,25 @@
 	}
 
 	const email1 = document.querySelector('#id_email');
-
+	
 	document.getElementsByName('email')[0].placeholder = 'Enter VIT email id.';
 	document.getElementsByName('username')[0].placeholder = 'Username';
 	document.getElementsByName('password1')[0].placeholder = 'Password';
 	document.getElementsByName('password2')[0].placeholder = 'Confirm password';
-
+	
 	email1.addEventListener('change', validate);
 	email1.addEventListener('click', validate);
+	
+	// Adding CSS Class to all input elements
+	
+	const name_field = document.querySelector('#id_username');
+	const pass1_field = document.querySelector('#id_password1');
+	const pass2_field = document.querySelector('#id_password2');
+
+	name_field.classList.add("form-control");
+	email1.classList.add("form-control");
+	pass1_field.classList.add("form-control");
+	pass2_field.classList.add("form-control");
 
 </script>
 

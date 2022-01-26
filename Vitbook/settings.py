@@ -1,6 +1,8 @@
 import os
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '&s8g9dsadsasadsadfcdsa^%#*m&^!htrm(1j2!01iht#@btgd654%re7rg7'
 
@@ -47,9 +49,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Vitbook.urls'
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -66,8 +65,13 @@ TEMPLATES = [
     },
 ]
 
+ROOT_URLCONF = 'Vitbook.urls'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WSGI_APPLICATION = 'Vitbook.wsgi.application'
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+LOGIN_REDIRECT_URL = "/"
+
+
 # Database
 
 DATABASES = {
@@ -108,7 +112,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-LOGIN_REDIRECT_URL = "/"
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
 STATIC_URL = '/static/'
@@ -122,4 +126,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+MEDIA_ROOT = BASE_DIR / 'static/images'
 

@@ -27,7 +27,7 @@ urlpatterns = [
     path('developer/', views.JoinView, name='developer'),
     path('developer/upload', views.JoinViewUpload),
     # path('contact/upload', views.ContactViewUpload),
-    path('', RedirectView.as_view(url="home/")),
+    path('home', RedirectView.as_view(url="/")),
 
     path('post/create/', views.MyPostCreate.as_view(success_url="/post"), name='postCreate'),
     path('post/delete/<int:pk>',

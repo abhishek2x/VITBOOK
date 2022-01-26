@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = '&s8g9^%#jl356^%#*m&^!htrm(1j2!01iht#@btgd654%re7rg7'
+SECRET_KEY = '&s8g9dsadsasadsadfcdsa^%#*m&^!htrm(1j2!01iht#@btgd654%re7rg7'
 
 DEBUG = True
 
@@ -47,28 +47,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#
-# MIDDLEWARE = [
-#
-#     # DJANGO DEFAULTS
-#     'django.middleware.security.SecurityMiddleware',
-#     'django.contrib.sessions.middleware.SessionMiddleware',
-#
-#     # CUSTOM CATCHING TECHNIQUE  -  CATCHING MIDDLEWARE
-#     'django.middleware.cache.UpdateCacheMiddleware',
-#     'django.middleware.common.CommonMiddleware',
-#     # 'django.middleware.cache.FetchFromCacheMiddleware',
-#
-#     # DJANGO DEFAULTS
-#     # 'django.middleware.common.CommonMiddleware',
-#     'django.middleware.csrf.CsrfViewMiddleware',
-#     'django.contrib.auth.middleware.AuthenticationMiddleware',
-#     'django.contrib.messages.middleware.MessageMiddleware',
-#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-#
-# ]
-
 ROOT_URLCONF = 'Vitbook.urls'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATES = [
     {
@@ -96,18 +76,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'BigProject'),
     }
 }
-
-# IN CASE DATABASE NEED TO BE SWITCHED FROM SQLITE TO VITBOOK
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'USER' : 'postgres',
-#         'NAME' : 'BigProject',
-#         'HOST' : 'localhost',
-#         'PASSWORD' : 'password'
-#     }
-# }
 
 # DJANGO DEFAULTS - Password validation
 
@@ -141,42 +109,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 LOGIN_REDIRECT_URL = "/"
-STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
 
+STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
 STATIC_URL = '/static/'
+
 MEDIA_URL = '/images/'
+
+if DEBUG == True:
+    MEDIA_ROOT = '/static/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')
-
-
-# ACCOUNT_ACTIVATION_DAYS = 3
-
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = '<your_gmail_id'
-# EMAIL_HOST_PASSWORD = '<your_password>'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-
-
-
-# CHACHE SETTING (INTEGRATION WITH Memcached Framework)
-
-# CACHES = {
-#     'default':{
-#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-#         'LOCATION': '127.0.0.1;11211',
-#     }
-# }
-
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-#         'LOCATION': 'vitbook_cache',
-#     }
-# }

@@ -109,13 +109,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 LOGIN_REDIRECT_URL = "/"
-STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
+
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')
+
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
-
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
-MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')

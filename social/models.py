@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 from django.core.validators import MinValueValidator, RegexValidator
-
+from Vitbook.settings import USER_AVATAR_URL
 # Create your models here.
 
 
@@ -30,7 +30,7 @@ class MyProfile(models.Model):
     github_profile = models.URLField(max_length=200, null=True, blank=True)
     portfolio = models.URLField(max_length=200, null=True, blank=True)
 
-    pic = models.ImageField(null=True, blank=True, default='default_profile.png')
+    pic = models.ImageField(null=True, blank=True, default=USER_AVATAR_URL)
 
     def __str__(self):
         return "%s" % self.user

@@ -452,13 +452,13 @@ class CreateChatUser(View):
 def like(request, pk, page, *args, **kargs):
     post = MyPost.objects.get(pk=pk)
     PostLike.objects.create(post=post, liked_by = request.user.myprofile)
-    return redirect('/social/home/' + "?page=" + page + '#' + str(pk))
+    return redirect('/' + "?page=" + page + '#' + str(pk))
 
 
 def unlike(req, pk, page, *args, **kargs):
     post = MyPost.objects.get(pk=pk)
     PostLike.objects.filter(post=post, liked_by = req.user.myprofile).delete()
-    return redirect('/social/home/' + "?page=" + page + '#' + str(pk))
+    return redirect('/' + "?page=" + page + '#' + str(pk))
 
 
 def follow(req, pk):
@@ -470,13 +470,13 @@ def follow(req, pk):
     # noti.follower = req.user.myprofile
     # noti.followed = user
 
-    return HttpResponseRedirect(redirect_to="/social/profile")
+    return HttpResponseRedirect(redirect_to="/profile")
 
 
 def unfollow(req, pk):
     user = MyProfile.objects.get(pk=pk)
     FollowUser.objects.filter(profile=user, followed_by=req.user.myprofile).delete()
-    return HttpResponseRedirect(redirect_to="/social/profile")
+    return HttpResponseRedirect(redirect_to="/profile")
 
 
 @login_required

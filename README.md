@@ -45,6 +45,54 @@
 
 ***
 
+# Website Images
+
+<details>
+
+## Registration Page
+
+<img src="./readme_images/registration.png"/>
+
+## Home Page
+
+<img src="./readme_images/home.png"/>
+
+## Profile Page
+
+<img src="./readme_images/profile.png"/>
+
+## Thoughts Sharing Page
+
+<img src="./readme_images/thoughts.png"/>
+
+## VITHUB Page
+
+<img src="./readme_images/vithub.png"/>
+
+## Anonymous Polling Page
+
+<img src="./readme_images/poll.png"/>
+
+## Forum Page
+
+<img src="./readme_images/forum.png"/>
+
+## Explore Page
+
+<img src="./readme_images/explore.png"/>
+
+## Search Page
+
+<img src="./readme_images/search.png"/>
+
+## Settings Page
+
+<img src="./readme_images/settings.png"/>
+
+</details>
+
+***
+
 ## Technology Stack
 
 * Frontend

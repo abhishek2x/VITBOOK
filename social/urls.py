@@ -12,7 +12,6 @@ urlpatterns = [
 
     path('attendance/', views.attendance, name='attendance'),
     path('grades/', views.grades, name='grades'),
-    path('notification/', views.notification, name='notification'),
 
     # path('chat/', views.chat),
     path('chat/',  views.ChatView.as_view(), name='chat_ajax'),

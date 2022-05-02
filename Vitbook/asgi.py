@@ -1,4 +1,7 @@
 """
+
+ASGI stands for Asynchronous Server Gateway interface
+
 ASGI config for Vitbook project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.

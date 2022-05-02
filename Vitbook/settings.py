@@ -85,6 +85,18 @@ DATABASES = {
     }
 }
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'BigProject',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#         'USER': 'vitbook_admin',
+#         'PASSWORD': 'DB_password',
+#     }
+# }
+
 # DJANGO DEFAULTS - Password validation
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -117,8 +129,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
-
-STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
@@ -131,4 +141,3 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')

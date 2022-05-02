@@ -180,6 +180,20 @@ python manage.py runserver
  
 ***
 
+## Optimisations
+
+  - Database Optimisation: Use of select_related and pre-fetch_related
+  - Static File compression using White Noise
+  - Catching like memcached server
+  - Laziness
+  - Paging
+  - On Code base level
+  - Third-party apps
+    - SQL Logging
+    - Debug Toolbar: To monitor activities
+
+***
+
 ## Useful Resources
 
 - [Django Docs](https://docs.djangoproject.com/en/3.0/)

@@ -23,25 +23,6 @@ from django.contrib import messages
 from django.views.generic import View
 from django.http import JsonResponse
 
-# from django.core.mail import send_mail
-
-                                            # Create your views here.
-
-
-# ----------------------------------------------------------------------------------------------------------------------
-                                    # NOTIFICATIONS
-# -----------------------------------------------------------------------------------------------------------------------
-
-
-ALL_NOTICES = []
-ALL_CODE = []
-ALL_FOLLOWERS = []
-
-
-def notification(request):
-    context = {'notices': ALL_NOTICES, 'code': ALL_CODE, 'follow': ALL_FOLLOWERS}
-    return render(request, 'social/notification.html', context)
-
 
 # ----------------------------------------------------------------------------------------------------------------------
                                     # Home View
@@ -60,15 +41,8 @@ class HomeView(ListView):
 
         followedList2 = []
         for e in followedList:
-            followedList2.append(e.profile)
-        postList = MyPost.objects.filter(uploaded_by__in=followedList2).order_by("-id")
-
-        # This was here for search query
-
-        # si = self.request.GET.get("si")
-        # if si == None:
-            # si = ""
-        # postList = postList.filter(Q(subject__icontains=si) | Q(msg__icontains=si)| Q(uploaded_by__name__icontains = si)).order_by("-id")
+            followedList2.append(e.profile) # profile of my followings
+        postList = MyPost.objects.filter(uploaded_by__in=followedList2).order_by("-id") # post uploaded by my followings
 
         LikeNoList = []
         for p1 in postList:
@@ -132,7 +106,6 @@ class welcome(TemplateView):
 class AboutView(TemplateView):
     template_name = "social/about.html"
 
-
 class PrivacyView(TemplateView):
     template_name = "social/privacy.html"
 
@@ -141,8 +114,17 @@ class SupportView(TemplateView):
     template_name = "social/support.html"
 
 
+
+def ContactView(request):
+    return render(request, "social/contact.html")
+
+
+def JoinView(request):
+    return render(request, "social/join.html")
+
+
 @login_required
-def ub(request):
+def ub(request): # underbelly cafeteria
     blg = AddConfession.objects.all().order_by("-id")
     paginator = Paginator(blg, 3) 
     page = request.GET.get('page', 1)
@@ -175,29 +157,12 @@ def Ubupload(request):
                 confession=confession)
 
             instance.save()
-
-            # send_mail(
-            #     'Your Accouncement is Uploaded Successfully',
-            #     'Your Accouncement is Uploaded Successfully at Accouncement Panel, You may check it if required',
-            #     'vitbook.smtp.team@gmail.com',
-            #     [request.user.email],
-            #     fail_silently=False
-            # )
-
-            ALL_NOTICES.append(instance)
             messages.success(request, 'Your Announcement has been successfully Uploaded!')
             return redirect('ub')
         else:
             messages.success(request, 'Oops!..Your Announcement has not been Uploaded!')
             return redirect('ub')
-    else:
-        print("failed to upload")
-        messages.success(request, 'Oops!..Your Announcement has not been Uploaded!')
-        return render(request, 'social/ub.html')
 
-
-def ContactView(request):
-    return render(request, "social/contact.html")
 
 
 def ContactViewUpload(request):
@@ -214,24 +179,9 @@ def ContactViewUpload(request):
                                          subject=subject, 
                                          description=description)
         instance.save()
-        # send_mail(
-        #     'Your Form is Successfully Submitted',
-        #     'Your Form is Uploaded Successfully, We may check it soon.',
-        #     'vitbook.smtp.team@gmail.com',
-        #     [request.user.email],
-        #     fail_silently=False
-        # )
         messages.success(request, 'Your form has been successfully submitted!')
         return redirect('contact')
-
-    else:
-        print("failed to upload")
-        messages.success(request, 'Oops!..Your form has not been submitted!')
-        return render(request, 'social/contact.html')
-
-
-def JoinView(request):
-    return render(request, "social/join.html")
+    
 
 
 def JoinViewUpload(request):
@@ -248,30 +198,13 @@ def JoinViewUpload(request):
                                          branch=branch, 
                                          suggestion=suggestions)
         instance.save()
-        # send_mail(
-        #     'Your Form is Successfully Submitted',
-        #     'Your Form is Uploaded Successfully, We may check it soon.',
-        #     'vitbook.smtp.team@gmail.com',
-        #     [request.user.email],
-        #     fail_silently=False
-        # )
         messages.success(request, 'Your form has been successfully submitted!')
         return redirect('developer')
-
-    else:
-        print("failed to upload")
-        messages.success(request, 'Oops!..Your form has not been submitted!')
-        return render(request, 'social/join.html')
 
 
 # ----------------------------------------------------------------------------------------------------------------------
                                             # MyProfile
 # -----------------------------------------------------------------------------------------------------------------------
-
-
-# @method_decorator(login_required, name="dispatch")
-# class MyProfileDetailView(DetailView):
-#     model = MyProfile
 
 
 @method_decorator(login_required, name="dispatch")
@@ -280,7 +213,6 @@ class MyProfileUpdateView(UpdateView):
     fields = ["name", "age", "gender", "city", "college", "registration_no", "status",
               "phone_no", "description", "tagline", "pic", "linkedin_profile",
               "facebook_profile", "insta_profile", "github_profile", "portfolio"]
-    # messages.success(request, 'Your Profile has been successfully Updated!')
 
 
 @method_decorator(login_required, name="dispatch")
@@ -339,14 +271,6 @@ class MyPostCreate(CreateView):
         self.object = form.save()
         self.object.uploaded_by = self.request.user.myprofile
         self.object.save()
-        # send_mail(
-        #     'Your Post is Successfully Uploaded',
-        #     'Your Post has been Uploaded Successfully, You may check it by following the Link.',
-        #     'vitbook.smtp.team@gmail.com',
-        #     [MyPost.uploaded_by.user.email],
-        #     fail_silently=False
-        # )
-        # messages.success(self, 'Your post has been successfully uploaded!')
         return HttpResponseRedirect(self.get_success_url())
 
 
@@ -386,15 +310,6 @@ class VithubCreate(CreateView):
         self.object = form.save()
         self.object.uploaded_by = self.request.user.myprofile
         self.object.save()
-        # send_mail(
-        #     'Your Project snippet is Successfully Uploaded',
-        #     'Your Project snippet has been Uploaded Successfully, You may check it by following the Link.',
-        #     'vitbook.smtp.team@gmail.com',
-        #     [Vithub.uploaded_by.user.email],
-        #     fail_silently=False
-        # )
-        ALL_CODE.append(self.object)
-        # messages.success(request, 'Your code has been successfully uploaded!')
         return HttpResponseRedirect(self.get_success_url())
 
 
@@ -465,11 +380,6 @@ def follow(req, pk):
     user = MyProfile.objects.get(pk=pk)
     FollowUser.objects.create(profile=user, followed_by=req.user.myprofile)
 
-
-    ALL_FOLLOWERS.append(user)
-    # noti.follower = req.user.myprofile
-    # noti.followed = user
-
     return HttpResponseRedirect(redirect_to="/profile")
 
 
@@ -511,13 +421,6 @@ def poll_create(request):
         form = CreatePollForm(request.POST)
         if form.is_valid():
             form.save()
-            # send_mail(
-            #     'Your Poll is Successfully Created',
-            #     'Your Poll has been Created Successfully, You may check it by following the Link.',
-            #     'vitbook.smtp.team@gmail.com',
-            #     [request.user.email],
-            #     fail_silently=False
-            # )
             return redirect('poll_home')
     else:
         form = CreatePollForm()
@@ -525,6 +428,7 @@ def poll_create(request):
         'form': form
     }
     return render(request, 'social/poll_create.html', context)
+
 
 @login_required
 def poll_vote(request, poll_id):

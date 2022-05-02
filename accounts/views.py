@@ -1,9 +1,6 @@
-from django.contrib.auth.decorators import login_required
-from django.forms import inlineformset_factory
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
-from social.models import MyProfile
 
 # Custom imports
 from .forms import CreateUserForm

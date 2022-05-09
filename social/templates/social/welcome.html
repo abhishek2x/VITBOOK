@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="/static/images/logooo.png">
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
     <title>Vitbook</title>
 
 
@@ -59,13 +59,14 @@
             <h2 class="text-uppercase text-break" id="typed"></h2>
 
             <br>
-            <a href="{% url 'home' %}"><button class="btn btn-lg btn-outline-light" type="button">Get Started</button></a>
+            <a href="{% url 'home' %}"><button class="btn btn-lg btn-outline-light" type="button">Get
+                    Started</button></a>
         </div>
     </div>
 
     <!-- scripts -->
-    <script src="/static/js/particles.js"></script>
-    <script src="/static/js/app.js"></script>
+    <script src="{% static 'js/particles.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 
 
     <!-- =========================================
@@ -74,7 +75,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
-    <script src="/static/js/welcome.js"></script>
+    <script src="{% static 'js/welcome.js' %}"></script>
 
 </body>
 

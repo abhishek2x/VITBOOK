@@ -14,7 +14,6 @@
                 <div class="col-md-8 align-self-start text-center">
                     <div>
 
-{#                        <h3 class="text">Feed :-</h3>#}
                         <div class="container new-post p-3 text-left"
                         style="
                             background: white;
@@ -29,18 +28,8 @@
                                 <i class="fa fa-edit"></i>
                                 Start a post
                             </a>
-{#                                <i class="fa fa-camera fa"></i>#}
                         </div>
 
-{#                        <form class="form-inline"#}
-{#                            style="border-top-style: solid;margin-top: 2px;border-top-width: 0px;margin-bottom: 10px;">#}
-{#                            <input id="tags" class="form-control mr-3" placeholder="Search in post"#}
-{#                                   value="{{ request.GET.si }}"#}
-{#                                type="text" name="si" />#}
-{##}
-{#                            <button class="btn btn-light m-2" type="submit" value="Search"><i#}
-{#                                    class="fas fa-search"></i></button>#}
-{#                        </form>#}
 
                         <hr>
 
@@ -59,7 +48,7 @@
 
                         <nav class="navbar navbar-light" id="one">
                             <div class="text-left">
-                                <img src="/images/{{n1.uploaded_by.pic}}" width="35" height="35"
+                                <img src="/media/{{n1.uploaded_by.pic}}" width="35" height="35"
                                 class="d-inline-block align-top">
                                 {% if n1.uploaded_by.user.is_superuser %}
 
@@ -166,23 +155,6 @@
 
                         <div class="container row other text-center">
                             <h3 class="text-muted" style="font-family: initial;">Welcome to Vitbook!</h3>
-{#                            <div class="container col-md-6 col-sm-6">#}
-{#                                <div class="container other-">#}
-{#                                    <a href="{% url 'postList' %}"><button class="btn-light">Explore at Vitbook</button></a>#}
-{#                                </div>#}
-{#                                <div class="container other-">#}
-{#                                    <a href="{% url 'vithubList' %}"><button class="btn-light">Know about Vithub</button></a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="container col-md-6 col-sm-6">#}
-{#                                <div class="container other-">#}
-{#                                    <a href="{% url 'profileEdit' user.id %}"><button class="btn-light">Set up your Profile</button></a>#}
-{#                                </div>#}
-{#                                <div class="container other-">#}
-{#                                    <a href="{% url 'profileList' %}"><button class="btn-light">Make new connections</button></a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        #}
 
                             <div class="container p-3 m-2">
                                 <p class="text-left" style="font-size: 15px;font-family: initial;">

@@ -6,73 +6,65 @@
 <link rel="stylesheet" href="{% static 'css/mypost_list.css' %}">
 <link rel="stylesheet" href="{% static 'css/new_profile.css' %}">
 
-    <style>
+<style>
     div.subjecting {
         background-color: rgb(255, 255, 255);
         border: 1px solid rgb(219, 219, 219);
     }
-    </style>
+</style>
 
 <body>
     <div class="container-fluid">
-{#        <div class="dealing-images container-fluid">#}
-{#            <img class="img-fluid cover" src="/images/{{myprofile.cov_pic}}" alt="Responsive Cover image">#}
-{#            <img src="/images/{{myprofile.pic}}" data-toggle="modal" data-target="#exampleModal"#}
-{#                 alt="Profile picture" class="profile img-thumbnail">#}
-{#        </div>#}
 
         <section class="section section_discover">
             <div class="container-fluid">
                 <div class="row">
 
-{#                    <div class="col-md-7 col-sm-7 align-self-start">#}
-{#                        <p class="hd-txt">Tagline : </p>#}
-{#                        <p class="font-italic mar">{{myprofile.tagline}}</p>#}
-{#                    </div>#}
 
                     <div class="col-md-4 col-sm-4 p-3">
-                         <img id="main_profile_pic" src="/images/{{myprofile.pic}}" alt="Profile picture"
-                         style="width: 200px;height: 200px;border-radius: 50%; " >
+                        <img id="main_profile_pic" src="/images/{{myprofile.pic}}" alt="Profile picture"
+                            style="width: 200px;height: 200px;border-radius: 50%; ">
                     </div>
 
                     <div class="col-md-6 col-sm-6 p-3 ">
                         <div class="col-sm-12 col-md-12 mb-3">
-                            <b class="username"  style="font-family: initial;font-weight: 700;font-size: 1.6em;" >
+                            <b class="username" style="font-family: initial;font-weight: 700;font-size: 1.6em;">
                                 {{ myprofile.user }}
 
                                 {% if myprofile.user.is_superuser %}
-                                    <sup>
-                                        <img src="{% static 'images/verified.png' %}" alt="verified" width="20px" height="20px">
-                                    </sup>
+                                <sup>
+                                    <img src="{% static 'images/verified.png' %}" alt="verified" width="20px"
+                                        height="20px">
+                                </sup>
                                 {% endif %}
 
                             </b>
                             {% if user == myprofile.user %}
-                                <a href="{% url 'profileEdit' myprofile.id %}" class="btn btn-sm btn-light mx-3">
-                                    Edit Profile
+                            <a href="{% url 'profileEdit' myprofile.id %}" class="btn btn-sm btn-light mx-3">
+                                Edit Profile
                                 <i class="fa fa-edit " aria-hidden="true"></i>
-                                </a>
+                            </a>
                             {% endif %}
                         </div>
                         <div class="col-sm-12 col-md-12 mb-3">
                             <a class="btn btn-sm" style="font-size: 15px;">
-                                <i >
-                                 <b>{{ totalPhotos }}</b> Posts
+                                <i>
+                                    <b>{{ totalPhotos }}</b> Posts
                                 </i>
                             </a>
                             <a class="btn btn-sm" style="font-size: 15px;">
                                 <i data-toggle="modal" data-target="#exampleModalsLongFollowing" aria-hidden="true">
-                                <b>{{ noOfFollowing }}</b> Following
+                                    <b>{{ noOfFollowing }}</b> Following
                                 </i>
                             </a>
                             <a class="btn btn-sm " style="font-size: 15px;">
                                 <i data-toggle="modal" data-target="#exampleModalsLongFollowers" aria-hidden="true">
-                                 <b>{{ noOfFollowers }}</b> Followers
+                                    <b>{{ noOfFollowers }}</b> Followers
                                 </i>
                             </a>
                         </div>
                         <div class="col-sm-12 col-md-12">
-                            <b class="username"  style="font-family: initial;font-weight: 700;font-size: 15px;" >
+                            <b class="username" style="font-family: initial;font-weight: 700;font-size: 15px;">
                                 {{ myprofile.name }}
                             </b>
                             <p class="text-break text-muted"> {{ myprofile.description }} </p>
@@ -109,57 +101,63 @@
                         <p class="hd-txt">Stay Connected : </p>
                         <div class="container dtl">
                             <p>
-                                Phone no. : <la class="font-weight-normal" alt="Not Provided">{{myprofile.phone_no}}</la>
+                                Phone no. : <la class="font-weight-normal" alt="Not Provided">{{myprofile.phone_no}}
+                                </la>
                             </p>
                             {% if myprofile.linkedin_profile %}
-                                <p>
-                                    LinkedIn :
-                                    <a href="{{ myprofile.linkedin_profile }}">
-                                        <la class="font-weight-normal ml-3">
-                                            <img src="/static/svg/linkedin.svg" alt="linkedin" height="20px" width="20px">
-                                        </la>
-                                    </a>
-                                </p>
+                            <p>
+                                LinkedIn :
+                                <a href="{{ myprofile.linkedin_profile }}">
+                                    <la class="font-weight-normal ml-3">
+                                        <img src="{% static 'svg/linkedin.svg' %}" alt="linkedin" height="20px"
+                                            width="20px">
+                                    </la>
+                                </a>
+                            </p>
                             {% endif %}
                             {% if myprofile.facebook_profile %}
-                                <p>
-                                    Facebook :
-                                    <a href="{{ myprofile.facebook_profile }}">
-                                        <la class="font-weight-normal ml-3">
-                                            <img src="/static/svg/facebook.svg" alt="facebook" height="20px" width="20px">
-                                        </la>
-                                    </a>
-                                </p>
+                            <p>
+                                Facebook :
+                                <a href="{{ myprofile.facebook_profile }}">
+                                    <la class="font-weight-normal ml-3">
+                                        <img src="{% static 'svg/facebook.svg' %}" alt="facebook" height="20px"
+                                            width="20px">
+                                    </la>
+                                </a>
+                            </p>
                             {% endif %}
                             {% if myprofile.github_profile %}
-                                <p>
-                                    Github :
-                                    <a href="{{ myprofile.github_profile }}">
-                                        <la class="font-weight-normal ml-4">
-                                            <img src="/static/svg/github.svg" alt="github" height="20px" width="20px">
-                                        </la>
-                                    </a>
-                                </p>
+                            <p>
+                                Github :
+                                <a href="{{ myprofile.github_profile }}">
+                                    <la class="font-weight-normal ml-4">
+                                        <img src="{% static 'svg/github.svg' %}" alt="github" height="20px"
+                                            width="20px">
+                                    </la>
+                                </a>
+                            </p>
                             {% endif %}
                             {% if myprofile.insta_profile %}
-                                <p>
-                                    Instagram :
-                                    <a href="{{ myprofile.insta_profile }}">
-                                        <la class="font-weight-normal ml-3">
-                                            <img src="/static/svg/instagram.svg" alt="instagram" height="20px" width="20px">
-                                        </la>
-                                    </a>
-                                </p>
+                            <p>
+                                Instagram :
+                                <a href="{{ myprofile.insta_profile }}">
+                                    <la class="font-weight-normal ml-3">
+                                        <img src="{% static 'svg/instagram.svg' %}" alt="instagram" height="20px"
+                                            width="20px">
+                                    </la>
+                                </a>
+                            </p>
                             {% endif %}
                             {% if myprofile.portfolio %}
-                                <p>
-                                    Portfolio :
-                                    <a href="{{ myprofile.portfolio }}">
-                                        <la class="font-weight-normal ml-3">
-                                            <img src="/static/svg/down.svg" alt="portfolio" height="20px" width="20px">
-                                        </la>
-                                    </a>
-                                </p>
+                            <p>
+                                Portfolio :
+                                <a href="{{ myprofile.portfolio }}">
+                                    <la class="font-weight-normal ml-3">
+                                        <img src="{% static 'svg/down.svg' %}" alt="portfolio" height="20px"
+                                            width="20px">
+                                    </la>
+                                </a>
+                            </p>
                             {% endif %}
                         </div>
                     </div>
@@ -189,19 +187,19 @@
             <div class="row infinite-container" style="margin-top: 20px;">
 
                 {% for n1 in photos %}
-                    {% if n1.pic %}
-                        <div class="col-md-4 col-xs-4 infinite-item">
-                            <div class="container img">
-                                <a><img class="image img-fluid" src="/images/{{n1.pic}}" alt="Picture"></a>
-                                <div class="middle">
-                                    <a href='{% url 'postDetail' n1.id %}'>
-                                        <div class="text">View Details</div>
-                                    </a>
-                                </div>
-                            </div>
+                {% if n1.pic %}
+                <div class="col-md-4 col-xs-4 infinite-item">
+                    <div class="container img">
+                        <a><img class="image img-fluid" src="/images/{{n1.pic}}" alt="Picture"></a>
+                        <div class="middle">
+                            <a href="{% url 'postDetail' n1.id %}">
+                                <div class="text">View Details</div>
+                            </a>
                         </div>
+                    </div>
+                </div>
 
-                    {% endif %}
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

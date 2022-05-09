@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/199ff71c-b62e-40bf-be9a-4254433f3088/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/vitbook",
+  "appService.deploySubpath": "."
+}

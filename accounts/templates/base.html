@@ -10,7 +10,7 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-cable" content="no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" href="/static/images/logooo.png">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -56,19 +56,8 @@
                          MAIN BODY
         ========================================= -->
 
-{#            {% if "vitbhopal.ac.in" in user.email or "abhisheksrivastavabbn@gmail.com" in user.email %}#}
                 {% block content %}
                 {% endblock %}
-{#            {% else %}#}
-{#                <div class="col-md-8 container">#}
-{#                    <p class="text-muted">You email: {{ request.user.email }}</p>#}
-{#                    <h3 class="text-danger p-3">Sorry!, your email does not belong to Vellore Institure of Technology, Bhopal</h3>#}
-{#                        <hr>#}
-{#                        <h4>You need to register again using your VIT email id :)</h4>#}
-{#                    <hr>#}
-{#                    <a href="/accounts/logout"><button class="btn btn-lg btn-secondary">Logout</button></a>#}
-{#                </div>#}
-{#            {% endif %}#}
 
 </header>
 

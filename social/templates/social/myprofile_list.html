@@ -4,7 +4,6 @@
 
 <link rel="stylesheet" href="{% static 'css/myprofile_list.css' %}">
 
-{#    This script is not working right now#}
 <script>
     $(function () {
         $("#tags").autocomplete({
@@ -49,7 +48,7 @@
                     <div class="card mb-3 infinite-item" style="max-width: 740px;">
                         <div class="row no-gutters">
                             <div class="col-md-4 img-fluid">
-                                <img src="/images/{{n1.pic}}" class="card-img" alt="Not provided">
+                                <img src="{% static 'images/{{n1.pic}}' %}" class="card-img" alt="Not provided">
                             </div>
                             <div class="col-md-8 ">
                                 <div class="card-body text-left">
@@ -90,8 +89,6 @@
                                     {% endif %}
                                 <!-- {% endif %} -->
 
-{#                                <a href="/mypost/?si={{n1.user}}" class=" btn btn-secondary btn-sm">View#}
-{#                                    Posts.</a>#}
                             </div>
                         </div>
                     </div>

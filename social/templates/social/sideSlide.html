@@ -19,7 +19,8 @@
             <ul class="list-unstyled components">
                 <div class="container mb-4">
                     <a href="{% url 'profileDetail' request.user.id %}">
-                        <img src="/images/{{ request.user.myprofile.pic }}" alt="Not Provided" width="30px" height="30px">
+                        <img src="/images/{{ request.user.myprofile.pic }}" alt="Not Provided" width="30px"
+                            height="30px">
                         <b class="text-break">Hello, {{user.username}}!</b>
                     </a>
                 </div>
@@ -31,22 +32,6 @@
                         </a>
                     </button>
                 </li>
-
-{#                <li class="nav-item active">#}
-{#                    <button type="button" class="btn chk">#}
-{#                        <a href="{% url 'profileDetail' user.id %}">#}
-{#                            <i class="fas fa-id-badge mr-3"></i>Profile#}
-{#                        </a>#}
-{#                    </button>#}
-{#                </li>#}
-{#                <li class="nav-item active">#}
-{#                    <button type="button" class="btn chk">#}
-{#                        <a href="{% url 'connections' %}">#}
-{#                            <i class="fas fa-users mr-3"></i>My Connections#}
-{#                        </a>#}
-{#                    </button>#}
-{#                </li>#}
-
                 <li class="nav-item active">
                     <button type="button" class="btn chk">
                         <a href="{% url 'postList' %}">
@@ -79,13 +64,6 @@
                     </button>
                 </li>
 
-{#                <li class="nav-item active">#}
-{#                    <button type="button" class="btn chk">#}
-{#                        <a href="{% url 'postCreate' %}">#}
-{#                            <i class="fas fa-user-edit mr-3"></i>Add New Post#}
-{#                        </a>#}
-{#                    </button>#}
-{#                </li>#}
 
                 <li class="nav-item active">
                     <button type="button" class="btn chk">
@@ -143,22 +121,16 @@
                     </button>
                 </li>
 
-{#                <li class="nav-item active">#}
-{#                    <button type="button" class="btn chk">#}
-{#                        <a href="/accounts/logout">#}
-{#                            <i class="fas fa-sign-out-alt mr-3"></i>Logout#}
-{#                        </a>#}
-{#                    </button>#}
                 </li>
                 {% if user.is_superuser %}
                 <hr>
-                    <li class="nav-item active">
-                        <button type="button" class="btn chk">
-                            <a href="/admin">
-                                <i class="fas fa-user-shield mr-3"></i>Admin
-                            </a>
-                        </button>
-                    </li>
+                <li class="nav-item active">
+                    <button type="button" class="btn chk">
+                        <a href="/admin">
+                            <i class="fas fa-user-shield mr-3"></i>Admin
+                        </a>
+                    </button>
+                </li>
                 {% endif %}
 
             </ul>

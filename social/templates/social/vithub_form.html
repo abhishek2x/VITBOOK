@@ -23,7 +23,6 @@
 
               <div class="form-group">
                 <label for="inputAddress">Title</label>
-{#                  <textarea type="text" rows="4" class="form-control" placeholder=Description"></textarea>#}
                   {% render_field form.title class="form-control" placeholder="Title" %}
               </div>
 
@@ -40,13 +39,13 @@
 
               <div class="form-group">
                 <label for="inputAddress">Description</label>
-    {#              <textarea type="text" rows="4" class="form-control" placeholder=Description"></textarea>#}
+
                   {% render_field form.description rows="4" class="form-control" placeholder="Description" %}
               </div>
 
               <div class="form-group">
                 <label for="inputAddress" style="max-width: 440px;">Code/Snippet</label>
-    {#              <textarea type="text" rows="6" class="form-control" placeholder=Code/Snippet"></textarea>#}
+
                   {% render_field form.code rows="12" class="form-control" placeholder="Code/Snippet" %}
               </div>
 

@@ -1,0 +1,27 @@
+
+
+@media (max-width: 420px) {
+
+    img.profile {
+        height: 130px;
+        width: 130px;
+        /*top: 77%;*/
+        /*left: 50%;*/
+        /*position: absolute;*/
+        /*z-index: 2;*/
+        border-radius: 50%;
+    }
+
+    p.hd-txt {
+        margin-top: 10px;
+    }
+
+    p.mar {
+        margin-top: 28px;
+    }
+
+    #link {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: x-large;
+    }
+}

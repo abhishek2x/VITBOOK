@@ -1,8 +1,9 @@
-
 <!-- =========================================
                          MODALS
         ========================================= -->
 
+
+{% load static %}
 <!-- Modal -->
 <div class="modal fade" id="exampleModalsLongSettings" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -79,26 +80,27 @@
                 <ul class="connect-ul">
                     <li class="connect-li">
                         <a target="_blank" href="https://www.instagram.com/theprogrammedenthusiast/">
-                            <img src="/static/svg/instagram.svg" alt="instagram" height="50px" width="50px">
+                            <img src="{% static 'svg/instagram.svg' %}" alt="instagram" height="50px" width="50px">
                         </a>
                     </li>
                     <li class="connect-li">
                         <a target="_blank" href="https://github.com/abhishek2x">
-                            <img src="/static/svg/github.svg" alt="Github" height="50px" width="50px">
+                            <img src="{% static 'svg/github.svg' %}" alt="Github" height="50px" width="50px">
                         </a>
                     </li>
                     <li class="connect-li">
                         <a target="_blank" href="https://medium.com/@abhishek2x">
-                            <img src="/static/svg/medium.svg" alt="Medium" height="50px" width="50px">
-                        </a>                    </li>
+                            <img src="{% static 'svg/medium.svg' %}" alt="Medium" height="50px" width="50px">
+                        </a>
+                    </li>
                     <li class="connect-li">
                         <a target="_blank" href="https://www.linkedin.com/in/abhishek-srivastava-49482a190/">
-                            <img src="/static/svg/linkedin.svg" alt="linkedin" height="50px" width="50px">
+                            <img src="{% static 'svg/linkedin.svg' %}" alt="linkedin" height="50px" width="50px">
                         </a>
                     </li>
                     <li class="connect-li">
                         <a target="_blank" href="https://portfolio.abhisheksrivastava.me/">
-                            <img src="/static/svg/logo.jpg" alt="portfolio" height="50px" width="50px">
+                            <img src="{% static 'svg/logo.jpg' %}" alt="portfolio" height="50px" width="50px">
                         </a>
                     </li>
                 </ul>
@@ -183,7 +185,8 @@
                 <h5 class="pb-5">Terms and conditions</h5>
                 <p class="pb-3">Welcome to Vitbook!</p>
                 <p>Vitbook builds technologies and services that enable students to connect with each other. </p>
-                <p>We don't charge you to use vitbook or any other product or services covered by these terms. By using our Product, you agree that we can show you add that we think will be relevent to you and
+                <p>We don't charge you to use vitbook or any other product or services covered by these terms. By using
+                    our Product, you agree that we can show you add that we think will be relevent to you and
                     your intrests. </p>
                 <p>We don't sell your personal data to advertisers, and we don't share information that directly
                     identifies you with advertisers unless you give us specific permissions. </p>
@@ -243,7 +246,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalsLongFollowing" tabindex="-1" role="dialog"
-     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -255,15 +258,14 @@
             <div class="modal-body">
                 <div class="">
                     {% for f in following %}
-                        <div class="link">
-                            <a href="{% url 'profileDetail' f.id %}">
-                                <img src="/images/{{ f.pic }}" class="m-2" alt="Not provided" width="40px" height="40px">
-                                {{ f }}
-                            </a>
-                            <button class="btn btn-sm btn-danger"
-                                    style="float: right ; margin-top: 13px ;"
-                            >unfollow</button>
-                        </div>
+                    <div class="link">
+                        <a href="{% url 'profileDetail' f.id %}">
+                            <img src="/images/{{ f.pic }}" class="m-2" alt="Not provided" width="40px" height="40px">
+                            {{ f }}
+                        </a>
+                        <button class="btn btn-sm btn-danger"
+                            style="float: right ; margin-top: 13px ;">unfollow</button>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
@@ -273,7 +275,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalsLongFollowers" tabindex="-1" role="dialog"
-     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -286,16 +288,16 @@
                 <div class="text-left">
 
                     {% for follower in followers %}
-                        <div id="link">
+                    <div id="link">
                         <a href="{% url 'profileDetail' follower.id %}">
-                            <img src="/images/{{ follower.pic }}" class="m-2" alt="Not provided" width="40px" height="40px">
+                            <img src="/images/{{ follower.pic }}" class="m-2" alt="Not provided" width="40px"
+                                height="40px">
                             {{ follower }}
                         </a>
-                        </div>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </div>
-

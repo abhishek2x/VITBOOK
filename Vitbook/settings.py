@@ -1,17 +1,11 @@
 import os
 from pathlib import Path
+from django import db
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = '&s8g9dsadsasadsadfcdsa^%#*m&^!htrm(1j2!01iht#@btgd654%re7rg7'
-
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -74,28 +68,21 @@ USER_AVATAR_URL = 'default_profile.png'
 WSGI_APPLICATION = 'Vitbook.wsgi.application'
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 LOGIN_REDIRECT_URL = "/"
-
+CSRF_TRUSTED_ORIGINS = ['https://vitbook.azurewebsites.net','https://*.127.0.0.1']
 
 # Database
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'BigProject'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vitbook-postgres-db',
+        'USER': 'vitbook_admin_db@vitbook-postgres-db',
+        'PASSWORD': os.getenv("VITBOOK_DB_PASS"),
+        'HOST': 'vitbook-postgres-db.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'}
     }
 }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'BigProject',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
-#         'USER': 'vitbook_admin',
-#         'PASSWORD': 'DB_password',
-#     }
-# }
 
 # DJANGO DEFAULTS - Password validation
 
@@ -126,18 +113,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
 
-STATIC_ROOT = os.path.join(BASE_DIR + 'staticfiles')
+# sample static file config
 STATIC_URL = '/static/'
-
 MEDIA_URL = '/images/'
 
-if DEBUG == True:
-    MEDIA_ROOT = '/static/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR + '/static/images')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

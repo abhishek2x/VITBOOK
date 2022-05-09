@@ -3,7 +3,6 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
-{#	<section class="section section_discover">#}
 
 		<div class="container">
 			<div class="text-left">
@@ -24,7 +23,6 @@
 						<p><la class="font-weight-normal">Uploaded by :</la> <b>{{mypost.uploaded_by}}</b></p>
 						<p><la class="font-weight-normal">Caption :</la> {{mypost.subject}}</p>
 						<p><la class="font-weight-normal">Description :</la> {{mypost.msg}}</p>
-{#						<p><la class="font-weight-normal">Image location  :</la> {{mypost.pic}}</p>#}
 						<p><la class="font-weight-normal">Date :</la> {{mypost.cr_date | date:"F d, Y"}}</p>
 					</div>
 					
@@ -47,6 +45,5 @@
 			</div>
 
 		</div>
-{#    </section>#}
 
 {% endblock %}

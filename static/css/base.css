@@ -64,7 +64,6 @@ svg:not(:root).svg-inline--fa{
   
   .nav-item.active > .btn.btn-outline-info > a:hover{
     text-decoration-style: solid;
-    font-weight: bolder;
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }

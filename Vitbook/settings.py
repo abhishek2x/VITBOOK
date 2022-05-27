@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     # Third Party Libraries
     'crispy_forms',
     'widget_tweaks',
+    "debug_toolbar",
+    'django_seed',
 
     # 'pagedown',
 ]
@@ -39,6 +41,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -70,19 +73,39 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 LOGIN_REDIRECT_URL = "/"
 CSRF_TRUSTED_ORIGINS = ['https://vitbook.azurewebsites.net','https://*.127.0.0.1']
 
+
+# django debug toolbar
+
+INTERNAL_IPS = ["127.0.0.1"] 
+
+if DEBUG:
+    import socket  # only if you haven't already imported this
+    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+    INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
+
+
+
 # Database
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'vitbook-postgres-db',
-        'USER': 'vitbook_admin_db@vitbook-postgres-db',
-        'PASSWORD': os.getenv("VITBOOK_DB_PASS"),
-        'HOST': 'vitbook-postgres-db.postgres.database.azure.com',
-        'PORT': '5432',
-        'OPTIONS': {'sslmode': 'require'}
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'BigProject'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'vitbook-postgres-db',
+#         'USER': 'vitbook_admin_db@vitbook-postgres-db',
+#         'PASSWORD': os.getenv("VITBOOK_DB_PASS"),
+#         'HOST': 'vitbook-postgres-db.postgres.database.azure.com',
+#         'PORT': '5432',
+#         'OPTIONS': {'sslmode': 'require'}
+#     }
+# }
 
 # DJANGO DEFAULTS - Password validation
 

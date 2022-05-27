@@ -5,9 +5,10 @@ from django.conf.urls.static import static
 from Vitbook import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),                 
     path('', include('social.urls')), 
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),      
+    path('__debug__/', include('debug_toolbar.urls')),
 ] 
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -87,24 +87,24 @@ if DEBUG:
 # Database
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'BigProject'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'vitbook-postgres-db',
-        'USER': 'vitbook_admin_db@vitbook-postgres-db',
-        'PASSWORD': os.getenv("VITBOOK_DB_PASS"),
-        'HOST': 'vitbook-postgres-db.postgres.database.azure.com',
-        'PORT': '5432',
-        'OPTIONS': {'sslmode': 'require'}
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'BigProject'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'vitbook-postgres-db',
+#         'USER': 'vitbook_admin_db@vitbook-postgres-db',
+#         'PASSWORD': os.getenv("VITBOOK_DB_PASS"),
+#         'HOST': 'vitbook-postgres-db.postgres.database.azure.com',
+#         'PORT': '5432',
+#         'OPTIONS': {'sslmode': 'require'}
+#     }
+# }
 
 # DJANGO DEFAULTS - Password validation
 

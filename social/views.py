@@ -3,25 +3,17 @@ from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
-from .forms import CreatePollForm
-
-# from social.forms import MyPostForm
-
-from .models import *
-
 from django.views.generic.detail import DetailView
 from django.db.models import Q
-
-from django.views.generic.edit import (UpdateView,
-                                        CreateView,
-                                        DeleteView )
-
+from django.views.generic.edit import (UpdateView, CreateView, DeleteView )
 from django.http.response import HttpResponseRedirect, HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
-
 from django.views.generic import View
 from django.http import JsonResponse
+
+from .forms import CreatePollForm
+from .models import *
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -34,7 +26,6 @@ class HomeView(ListView):
 
     template_name = "social/home.html"
     paginate_by = 7
-    # global is_paginated = true
 
     def get_queryset(self):
         followedList = FollowUser.objects.filter(followed_by=self.request.user.myprofile)

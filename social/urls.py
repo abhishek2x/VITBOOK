@@ -8,15 +8,11 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
 
     path('', views.HomeView.as_view(), name='home'),
-    # path('connections/', views.FriendsView.as_view(), name='connections'),
-
     path('attendance/', views.attendance, name='attendance'),
     path('grades/', views.grades, name='grades'),
 
-    # path('chat/', views.chat),
     path('chat/',  views.ChatView.as_view(), name='chat_ajax'),
     path('chat/create/',  views.CreateChatUser.as_view(), name='chat_ajax_create'),
-    # path('chat/upload', views.chatUpload),
     
     path('ub/', views.ub, name='ub'),
     path('ub/upload', views.Ubupload),
@@ -25,7 +21,6 @@ urlpatterns = [
     path('contact/upload', views.ContactViewUpload),
     path('developer/', views.JoinView, name='developer'),
     path('developer/upload', views.JoinViewUpload),
-    # path('contact/upload', views.ContactViewUpload),
     path('home', RedirectView.as_view(url="/")),
 
     path('post/create/', views.MyPostCreate.as_view(success_url="/post"), name='postCreate'),
@@ -33,10 +28,6 @@ urlpatterns = [
          views.MyPostDeleteView.as_view(success_url="/post"), name='postDelete'),
 
     path('post/', views.MyPostListView.as_view(), name='postList'),
-
-    #     path('photos/', views.PhotosView.as_view()),
-
-
     path('post/<int:pk>', views.MyPostDetailView.as_view(), name='postDetail'),
     path('post/like/<int:pk>/<page>', views.like, name="like"),
     path('post/unlike/<int:pk>/<page>', views.unlike, name='unlike'),
@@ -45,9 +36,8 @@ urlpatterns = [
          views.MyProfileUpdateView.as_view(success_url="/home"), name='profileEdit'),
     path('profile/', views.MyProfileListView.as_view(), name='profileList'),
     path('profile/<int:pk>', views.profiling, name='profileDetail'),
-    # path('myprofile/<int:pk>', views.MyProfileDetailView.as_view(),),
 
-    
+
     path('profile/follow/<int:pk>', views.follow, name='follow'),
     path('profile/unfollow/<int:pk>', views.unfollow, name='unfollow'),
 

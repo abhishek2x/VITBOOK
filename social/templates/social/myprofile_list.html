@@ -4,13 +4,6 @@
 
 <link rel="stylesheet" href="{% static 'css/myprofile_list.css' %}">
 
-<script>
-    $(function () {
-        $("#tags").autocomplete({
-            source: {{ myprofile_list }}
-        });
-    });
-</script>
 
 <style>
     .myhead2 {
@@ -59,9 +52,10 @@
 
                                         {% if n1.user.is_superuser %}
 
-                                            <sup>
-                                                <img src="{% static 'images/verified.png' %}" alt="verified" width="20px" height="20px">
-                                            </sup>
+                                        <sup>
+                                            <img src="{% static 'images/verified.png' %}" alt="verified" width="20px"
+                                                height="20px">
+                                        </sup>
 
                                         {% endif %}
                                     </h5>
@@ -79,15 +73,14 @@
                             </div>
                             <hr>
                             <div class="container mb-2">
-                                <a href="{% url 'profileDetail' n1.id %}" class="m-1 btn btn-dark btn-sm">View Profile</a>
+                                <a href="{% url 'profileDetail' n1.id %}" class="m-1 btn btn-dark btn-sm">View
+                                    Profile</a>
 
-                                <!-- {% if n1.user != user %} -->
-                                    {% if n1.followed %}
-                                        <a href="{% url 'unfollow' n1.id %}" class="m-1 btn btn-danger btn-sm">Unfollow</a>
-                                    {% else %}
-                                        <a href="{% url 'follow' n1.id %}" class="m-1 btn btn-primary btn-sm">Follow</a>
-                                    {% endif %}
-                                <!-- {% endif %} -->
+                                {% if n1.followed %}
+                                <a href="{% url 'unfollow' n1.id %}" class="m-1 btn btn-danger btn-sm">Unfollow</a>
+                                {% else %}
+                                <a href="{% url 'follow' n1.id %}" class="m-1 btn btn-primary btn-sm">Follow</a>
+                                {% endif %}
 
                             </div>
                         </div>
